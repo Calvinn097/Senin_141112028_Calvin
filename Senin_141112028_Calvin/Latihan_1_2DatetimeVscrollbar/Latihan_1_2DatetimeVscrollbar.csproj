@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E84B72E2-2EA8-4D20-9140-E849260C4C71}</ProjectGuid>
+    <ProjectGuid>{F449F273-2FF2-491F-8FE0-6E7BC47F654B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Latihan_1_1TabIcon</RootNamespace>
-    <AssemblyName>Latihan_1_1TabIcon</AssemblyName>
+    <RootNamespace>Latihan_1_2DatetimeVscrollbar</RootNamespace>
+    <AssemblyName>Latihan_1_2DatetimeVscrollbar</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
