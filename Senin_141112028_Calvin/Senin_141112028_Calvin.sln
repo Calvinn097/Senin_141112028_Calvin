@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latihan_1_1TabIcon", "Latih
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latihan_1_2DatetimeVscrollbar", "Latihan_1_2DatetimeVscrollbar\Latihan_1_2DatetimeVscrollbar.csproj", "{F449F273-2FF2-491F-8FE0-6E7BC47F654B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latihan_2_1", "Latihan_2_1\Latihan_2_1.csproj", "{7E914E7F-1857-4758-8AF8-DB44A77C08D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F449F273-2FF2-491F-8FE0-6E7BC47F654B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F449F273-2FF2-491F-8FE0-6E7BC47F654B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F449F273-2FF2-491F-8FE0-6E7BC47F654B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E914E7F-1857-4758-8AF8-DB44A77C08D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E914E7F-1857-4758-8AF8-DB44A77C08D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E914E7F-1857-4758-8AF8-DB44A77C08D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E914E7F-1857-4758-8AF8-DB44A77C08D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
