@@ -28,73 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
+            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.domainUpDown2 = new System.Windows.Forms.DomainUpDown();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31"});
-            this.comboBox1.Location = new System.Drawing.Point(63, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "January",
-            "Februari",
-            "Maret",
-            "April",
-            "Mei",
-            "Juni",
-            "Juli",
-            "Agustus",
-            "September",
-            "Oktober",
-            "November",
-            "Desember"});
-            this.comboBox2.Location = new System.Drawing.Point(229, 55);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 1;
             // 
             // button1
             // 
@@ -133,17 +73,76 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Birthday 17 March";
             // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.Items.Add("1");
+            this.domainUpDown1.Items.Add("2");
+            this.domainUpDown1.Items.Add("3");
+            this.domainUpDown1.Items.Add("4");
+            this.domainUpDown1.Items.Add("5");
+            this.domainUpDown1.Items.Add("6");
+            this.domainUpDown1.Items.Add("7");
+            this.domainUpDown1.Items.Add("8");
+            this.domainUpDown1.Items.Add("9");
+            this.domainUpDown1.Items.Add("10");
+            this.domainUpDown1.Items.Add("11");
+            this.domainUpDown1.Items.Add("12");
+            this.domainUpDown1.Items.Add("13");
+            this.domainUpDown1.Items.Add("14");
+            this.domainUpDown1.Items.Add("15");
+            this.domainUpDown1.Items.Add("16");
+            this.domainUpDown1.Items.Add("17");
+            this.domainUpDown1.Items.Add("18");
+            this.domainUpDown1.Items.Add("19");
+            this.domainUpDown1.Items.Add("20");
+            this.domainUpDown1.Items.Add("21");
+            this.domainUpDown1.Items.Add("22");
+            this.domainUpDown1.Items.Add("23");
+            this.domainUpDown1.Items.Add("24");
+            this.domainUpDown1.Items.Add("25");
+            this.domainUpDown1.Items.Add("26");
+            this.domainUpDown1.Items.Add("27");
+            this.domainUpDown1.Items.Add("28");
+            this.domainUpDown1.Items.Add("29");
+            this.domainUpDown1.Items.Add("30");
+            this.domainUpDown1.Items.Add("31");
+            this.domainUpDown1.Location = new System.Drawing.Point(114, 55);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.domainUpDown1.TabIndex = 6;
+            this.domainUpDown1.Text = "domainUpDown1";
+            // 
+            // domainUpDown2
+            // 
+            this.domainUpDown2.Items.Add("Januari");
+            this.domainUpDown2.Items.Add("Februari");
+            this.domainUpDown2.Items.Add("Maret");
+            this.domainUpDown2.Items.Add("April");
+            this.domainUpDown2.Items.Add("Mei");
+            this.domainUpDown2.Items.Add("Juni");
+            this.domainUpDown2.Items.Add("Juli");
+            this.domainUpDown2.Items.Add("Agustus");
+            this.domainUpDown2.Items.Add("September");
+            this.domainUpDown2.Items.Add("Oktober");
+            this.domainUpDown2.Items.Add("November");
+            this.domainUpDown2.Items.Add("Desember");
+            this.domainUpDown2.Location = new System.Drawing.Point(263, 55);
+            this.domainUpDown2.Name = "domainUpDown2";
+            this.domainUpDown2.Size = new System.Drawing.Size(120, 20);
+            this.domainUpDown2.TabIndex = 7;
+            this.domainUpDown2.Text = "domainUpDown2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 486);
+            this.Controls.Add(this.domainUpDown2);
+            this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
             this.Name = "Form1";
             this.Text = "2028Calendar Boldbold";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -154,12 +153,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.DomainUpDown domainUpDown2;
     }
 }
 

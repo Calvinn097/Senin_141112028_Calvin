@@ -41,13 +41,14 @@ namespace Latihan_2_1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() == "" || comboBox2.SelectedItem.ToString() == "")
+
+            if (domainUpDown1.SelectedItem.ToString() == "" || domainUpDown2.SelectedItem.ToString() == "")
             {
                 MessageBox.Show("empty");
             }
-            int day = Convert.ToInt32(comboBox1.SelectedItem);
+            int day = Convert.ToInt32(domainUpDown1.SelectedItem);
             int month;
-            switch (comboBox2.SelectedItem.ToString())
+            switch (domainUpDown2.SelectedItem.ToString())
             {
                 case "Januari":
                     month = 1;
@@ -92,9 +93,9 @@ namespace Latihan_2_1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int day = Convert.ToInt32(comboBox1.SelectedItem);
+            int day = Convert.ToInt32(domainUpDown1.SelectedItem);
             int month;
-            switch (comboBox2.SelectedItem.ToString())
+            switch (domainUpDown2.SelectedItem.ToString())
             {
                 case "Januari":
                     month = 1;
