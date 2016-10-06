@@ -50,7 +50,7 @@
             // 
             // vScrollBar2
             // 
-            this.vScrollBar2.Location = new System.Drawing.Point(430, 141);
+            this.vScrollBar2.Location = new System.Drawing.Point(433, 141);
             this.vScrollBar2.Maximum = 19;
             this.vScrollBar2.Minimum = 1;
             this.vScrollBar2.Name = "vScrollBar2";

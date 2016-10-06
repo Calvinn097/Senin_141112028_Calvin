@@ -137,5 +137,30 @@ namespace Latihan_2_1
             monthCalendar1.RemoveAnnuallyBoldedDate(new DateTime(2016, month, day));
             monthCalendar1.UpdateBoldedDates();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            for (DateTime _i = monthCalendar1.SelectionStart; _i <= monthCalendar1.SelectionEnd;_i=_i.AddDays(1) )
+            {
+                monthCalendar1.RemoveAnnuallyBoldedDate(_i);
+                monthCalendar1.RemoveBoldedDate(_i);
+            }
+            monthCalendar1.UpdateBoldedDates();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            for (DateTime _i = monthCalendar1.SelectionStart; _i < monthCalendar1.SelectionEnd; _i = _i.AddDays(1))
+            {
+                monthCalendar1.AddBoldedDate(_i);
+            }
+
+            monthCalendar1.UpdateBoldedDates();
+        }
     }
 }
