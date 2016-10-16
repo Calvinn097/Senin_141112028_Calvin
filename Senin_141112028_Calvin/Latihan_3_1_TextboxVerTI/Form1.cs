@@ -35,13 +35,64 @@ namespace Latihan_3_1_TextboxVerTI
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //richTextBox1.SelectionFont = new Font(comboBox1.SelectedItem.ToString(), Convert.ToInt16(comboBox2.SelectedItem));
-           
+            if (comboBox1.SelectedItem != null && comboBox2.SelectedItem != null && richTextBox1.SelectionFont.FontFamily != null && richTextBox1.SelectionFont.Size != null && richTextBox1.SelectionFont != null)
+            {
+                if (richTextBox1.SelectedText.ToString() != "")
+                {
+                    Font font = richTextBox1.SelectionFont;
+                    FontFamily fam = new FontFamily(comboBox1.SelectedItem.ToString());
+                    richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(richTextBox1.SelectionFont.Size), richTextBox1.SelectionFont.Style);
+
+
+                }
+                else
+                {
+                    Font font = richTextBox1.SelectionFont;
+                    FontFamily fam = new FontFamily(comboBox1.SelectedItem.ToString());
+                    bool bold = checkBox1.Checked;
+                    bool underline = checkBox3.Checked;
+                    bool italic = checkBox2.Checked;
+                    if (bold && underline && italic)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Bold | FontStyle.Underline | FontStyle.Italic);
+                    }
+                    else if (bold && underline)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Bold | FontStyle.Underline);
+                    }
+                    else if (bold && italic)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Bold | FontStyle.Italic);
+                    }
+                    else if (underline && italic)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Italic | FontStyle.Underline);
+                    }
+                    else if (bold)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Bold);
+                    }
+                    else if (underline)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Underline);
+                    }
+                    else if (italic)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Italic);
+                    }
+                    else
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Regular);
+                    }
+                }
+            }
+            richTextBox1.Focus();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,7 +102,58 @@ namespace Latihan_3_1_TextboxVerTI
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedItem != null && comboBox2.SelectedItem.ToString() != "0" && richTextBox1.SelectionFont.FontFamily != null && richTextBox1.SelectionFont.Size != null && richTextBox1.SelectionFont != null)
+            {
+                if (richTextBox1.SelectedText.ToString() != "")
+                {
+                    Font font = richTextBox1.SelectionFont;
+                    FontFamily fam = richTextBox1.SelectionFont.FontFamily;
+                    richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), richTextBox1.SelectionFont.Style);
 
+
+                }
+                else
+                {
+                    Font font = richTextBox1.SelectionFont;
+                    FontFamily fam = new FontFamily(comboBox1.SelectedItem.ToString());
+                    bool bold = checkBox1.Checked;
+                    bool underline = checkBox3.Checked;
+                    bool italic = checkBox2.Checked;
+                    if (bold && underline && italic)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Bold | FontStyle.Underline | FontStyle.Italic);
+                    }
+                    else if (bold && underline)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Bold | FontStyle.Underline);
+                    }
+                    else if (bold && italic)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Bold | FontStyle.Italic);
+                    }
+                    else if (underline && italic)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Italic | FontStyle.Underline);
+                    }
+                    else if (bold)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Bold);
+                    }
+                    else if (underline)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Underline);
+                    }
+                    else if (italic)
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Italic);
+                    }
+                    else
+                    {
+                        richTextBox1.SelectionFont = new Font(fam, Convert.ToInt32(comboBox2.SelectedItem), FontStyle.Regular);
+                    }
+                }
+            }
+            richTextBox1.Focus();
         }
 
         private void checkBox1_Click(object sender, EventArgs e)
@@ -71,7 +173,7 @@ namespace Latihan_3_1_TextboxVerTI
                         if (richTextBox1.SelectionFont == null)
                             return;
                         if (richTextBox1.SelectionFont.Bold)
-                        { 
+                        {
                             //MessageBox.Show("All text is Bold"); 
                         }
                         else if (richTextBox1.SelectedRtf.Replace(@"\\", "").IndexOf(@"\b") > -1)
@@ -81,67 +183,68 @@ namespace Latihan_3_1_TextboxVerTI
                         }
                         else
                             //MessageBox.Show("Text doesn't contain Bold");
-                        //for (int i = 1; i < end; i++)
-                        //{
-                        //    richTextBox1.SelectionStart = start+i;
-                        //    richTextBox1.SelectionLength = 1;
-                        //    if (richTextBox1.SelectionFont.Bold)
-                        //    {
-                        //        ubah = false;
-                        //        richTextBox1.SelectionStart = 0;
-                        //        richTextBox1.SelectionLength = 0;
-                        //        richTextBox1.SelectionStart = start;
-                        //        richTextBox1.SelectionLength = end;
-                        //        richTextBox1.Focus();
-                        //        break;
-                        //    }
-                        //}
-                        if (ubah)//jika ubah true dikarenakan karakter yang diblock tidak mengandung bold
-                        {
-                            richTextBox1.SelectionStart = start;
-                            richTextBox1.SelectionLength = end;
-                            if (richTextBox1.SelectionFont.Italic && richTextBox1.SelectionFont.Underline)
+                            //for (int i = 1; i < end; i++)
+                            //{
+                            //    richTextBox1.SelectionStart = start+i;
+                            //    richTextBox1.SelectionLength = 1;
+                            //    if (richTextBox1.SelectionFont.Bold)
+                            //    {
+                            //        ubah = false;
+                            //        richTextBox1.SelectionStart = 0;
+                            //        richTextBox1.SelectionLength = 0;
+                            //        richTextBox1.SelectionStart = start;
+                            //        richTextBox1.SelectionLength = end;
+                            //        richTextBox1.Focus();
+                            //        break;
+                            //    }
+                            //}
+                            if (ubah)//jika ubah true dikarenakan karakter yang diblock tidak mengandung bold
                             {
-                                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | FontStyle.Bold | FontStyle.Underline);
+                                richTextBox1.SelectionStart = start;
+                                richTextBox1.SelectionLength = end;
+                                if (richTextBox1.SelectionFont.Italic && richTextBox1.SelectionFont.Underline)
+                                {
+                                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Italic | FontStyle.Bold | FontStyle.Underline);
+                                }
+                                else if (richTextBox1.SelectionFont.Italic)
+                                {
+                                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Bold | FontStyle.Italic);
+                                }
+                                else if (richTextBox1.SelectionFont.Underline)
+                                {
+                                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Underline | FontStyle.Bold);
+                                }
+                                else
+                                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Bold);
+                                //richTextBox1.DeselectAll();
+                                //FontFamily rtb_fontfamily = new FontFamily(comboBox1.SelectedItem.ToString());
+                                //richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Bold);
+                                //richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular);
+                                //MessageBox.Show(richTextBox1.SelectionFont.Bold.ToString());
                             }
-                            else if (richTextBox1.SelectionFont.Italic)
-                            {
-                                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Italic);
-                            }
-                            else if (richTextBox1.SelectionFont.Underline)
-                            {
-                                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline | FontStyle.Bold);
-                            }
-                            else
-                                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold);
-                            //richTextBox1.DeselectAll();
-                            //FontFamily rtb_fontfamily = new FontFamily(comboBox1.SelectedItem.ToString());
-                            //richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Bold);
-                            //richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular);
-                            //MessageBox.Show(richTextBox1.SelectionFont.Bold.ToString());
-                        }
-                       
+
                     }
                 }
-                else {
+                else
+                {
                     if (richTextBox1.SelectionFont.Bold)
                     {
                         int start = richTextBox1.SelectionStart;
                         int end = richTextBox1.SelectionLength;
                         if (richTextBox1.SelectionFont.Italic && richTextBox1.SelectionFont.Underline)
                         {
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | FontStyle.Underline);
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Italic | FontStyle.Underline);
                         }
                         else if (richTextBox1.SelectionFont.Italic)
                         {
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic);
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Italic);
                         }
                         else if (richTextBox1.SelectionFont.Underline)
                         {
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline);
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Underline);
                         }
                         else
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular);
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Regular);
 
                         richTextBox1.SelectionStart = start;
                         richTextBox1.SelectionLength = end;
@@ -150,26 +253,29 @@ namespace Latihan_3_1_TextboxVerTI
             }
             else
             {
-                if(checkBox1.Checked){
-                    if(checkBox2.Checked&&checkBox3.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold|FontStyle.Italic|FontStyle.Underline);
-                    else if(checkBox2.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Italic);
-                    else if(checkBox3.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
+                FontFamily fam = new FontFamily(comboBox1.SelectedItem.ToString());
+                float size = Convert.ToInt32(comboBox2.SelectedItem);
+                if (checkBox1.Checked)
+                {
+                    if (checkBox2.Checked && checkBox3.Checked)
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                    else if (checkBox2.Checked)
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Bold | FontStyle.Italic);
+                    else if (checkBox3.Checked)
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Bold | FontStyle.Underline);
                     else
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Bold);
                 }
                 else
                 {
                     if (checkBox2.Checked && checkBox3.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font,  FontStyle.Italic | FontStyle.Underline);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Italic | FontStyle.Underline);
                     else if (checkBox2.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Italic);
                     else if (checkBox3.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline);
+                        richTextBox1.SelectionFont = new Font(fam,size, FontStyle.Underline);
                     else
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Regular);
                 }
             }
             richTextBox1.Focus();
@@ -204,18 +310,18 @@ namespace Latihan_3_1_TextboxVerTI
                                 richTextBox1.SelectionLength = end;
                                 if (richTextBox1.SelectionFont.Bold && richTextBox1.SelectionFont.Underline)
                                 {
-                                    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | FontStyle.Bold | FontStyle.Underline);
+                                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Italic | FontStyle.Bold | FontStyle.Underline);
                                 }
                                 else if (richTextBox1.SelectionFont.Bold)
                                 {
-                                    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Italic);
+                                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Bold | FontStyle.Italic);
                                 }
                                 else if (richTextBox1.SelectionFont.Underline)
                                 {
-                                    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline | FontStyle.Italic);
+                                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Underline | FontStyle.Italic);
                                 }
                                 else
-                                    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic);
+                                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Italic);
                                 richTextBox1.SelectionStart = start;
                                 richTextBox1.SelectionLength = end;
                             }
@@ -233,18 +339,18 @@ namespace Latihan_3_1_TextboxVerTI
                         int end = richTextBox1.SelectionLength;
                         if (richTextBox1.SelectionFont.Bold && richTextBox1.SelectionFont.Underline)
                         {
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Bold | FontStyle.Underline);
                         }
                         else if (richTextBox1.SelectionFont.Bold)
                         {
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold );
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Bold);
                         }
                         else if (richTextBox1.SelectionFont.Underline)
                         {
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline);
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Underline);
                         }
                         else
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular);
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Regular);
                         richTextBox1.SelectionStart = start;
                         richTextBox1.SelectionLength = end;
                         richTextBox1.Focus();
@@ -253,46 +359,48 @@ namespace Latihan_3_1_TextboxVerTI
             }
             else
             {
+                FontFamily fam = new FontFamily(comboBox1.SelectedItem.ToString());
+                float size = Convert.ToInt32(comboBox2.SelectedItem);
                 if (checkBox2.Checked)
                 {
-                    if (richTextBox1.SelectionFont.Bold&&richTextBox1.SelectionFont.Underline)
+                    if (richTextBox1.SelectionFont.Bold && richTextBox1.SelectionFont.Underline)
                     {
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | FontStyle.Bold|FontStyle.Underline);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Italic | FontStyle.Bold | FontStyle.Underline);
                     }
                     else if (richTextBox1.SelectionFont.Bold)
                     {
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Italic);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Bold | FontStyle.Italic);
                     }
                     else if (richTextBox1.SelectionFont.Underline)
                     {
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline | FontStyle.Italic);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Underline | FontStyle.Italic);
                     }
                     else
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Italic);
                 }
                 else
                 {
                     if (checkBox2.Checked)
                     {
                         if (checkBox1.Checked && checkBox3.Checked)
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                            richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
                         else if (checkBox1.Checked)
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | FontStyle.Bold);
+                            richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Italic | FontStyle.Bold);
                         else if (checkBox3.Checked)
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | FontStyle.Underline);
+                            richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Italic | FontStyle.Underline);
                         else
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic);
+                            richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Italic);
                     }
                     else
                     {
                         if (checkBox1.Checked && checkBox3.Checked)
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
+                            richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Bold | FontStyle.Underline);
                         else if (checkBox1.Checked)
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold);
+                            richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Bold);
                         else if (checkBox3.Checked)
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline);
+                            richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Underline);
                         else
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular);
+                            richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Regular);
                     }
                 }
             }
@@ -312,10 +420,10 @@ namespace Latihan_3_1_TextboxVerTI
                         int end = richTextBox1.SelectionLength;
                         if (richTextBox1.SelectionFont == null)
                             return;
-                        
+
                         if (richTextBox1.SelectedRtf.Replace(@"\\", "").IndexOf(@"\ul") > -1)
                         {
-                            MessageBox.Show("asd");
+                            //MessageBox.Show("asd");
                             ubah = false;
                         }
                         if (ubah)
@@ -324,18 +432,18 @@ namespace Latihan_3_1_TextboxVerTI
                             richTextBox1.SelectionLength = end;
                             if (richTextBox1.SelectionFont.Bold && richTextBox1.SelectionFont.Italic)
                             {
-                                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | FontStyle.Bold | FontStyle.Underline);
+                                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Italic | FontStyle.Bold | FontStyle.Underline);
                             }
                             else if (richTextBox1.SelectionFont.Bold)
                             {
-                                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
+                                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Bold | FontStyle.Underline);
                             }
                             else if (richTextBox1.SelectionFont.Italic)
                             {
-                                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline | FontStyle.Italic);
+                                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Underline | FontStyle.Italic);
                             }
                             else
-                                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline);
+                                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Underline);
                             richTextBox1.SelectionStart = start;
                             richTextBox1.SelectionLength = end;
                         }
@@ -351,18 +459,18 @@ namespace Latihan_3_1_TextboxVerTI
                         int end = richTextBox1.SelectionLength;
                         if (richTextBox1.SelectionFont.Bold && richTextBox1.SelectionFont.Italic)
                         {
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Italic);
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Bold | FontStyle.Italic);
                         }
                         else if (richTextBox1.SelectionFont.Bold)
                         {
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold );
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Bold);
                         }
                         else if (richTextBox1.SelectionFont.Italic)
                         {
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic );
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Italic);
                         }
                         else
-                            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular);
+                            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Regular);
 
                         richTextBox1.SelectionStart = start;
                         richTextBox1.SelectionLength = end;
@@ -371,30 +479,50 @@ namespace Latihan_3_1_TextboxVerTI
             }
             else
             {
+                FontFamily fam = new FontFamily(comboBox1.SelectedItem.ToString());
+                float size = Convert.ToInt32(comboBox2.SelectedItem);
                 if (checkBox3.Checked)
                 {
-                    if (checkBox2.Checked && checkBox1.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
-                    else if (checkBox1.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
-                    else if (checkBox2.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | FontStyle.Underline);
-                    else
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline);
+                    //if (checkBox2.Checked && checkBox1.Checked)
+                    //    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                    //else if (checkBox1.Checked)
+                    //    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
+                    //else if (checkBox2.Checked)
+                    //    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | FontStyle.Underline);
+                    //else
+                    //    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline);
+                    richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Underline | richTextBox1.SelectionFont.Style);
                 }
                 else
                 {
                     if (checkBox2.Checked && checkBox1.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | FontStyle.Bold);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Italic | FontStyle.Bold);
                     else if (checkBox2.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Italic);
                     else if (checkBox1.Checked)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Bold);
                     else
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular);
+                        richTextBox1.SelectionFont = new Font(fam, size, FontStyle.Regular);
                 }
             }
             richTextBox1.Focus();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (richTextBox1.SelectedText.ToString() != "")
+                {
+                    richTextBox1.SelectionColor = colorDialog1.Color;
+                }
+                else
+                {
+                    richTextBox1.SelectionColor = colorDialog1.Color;
+                }
+            }
+            richTextBox1.Focus();
+        }
+
     }
 }

@@ -35,8 +35,9 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -47,6 +48,10 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // fontDialog1
+            // 
+            this.fontDialog1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             // 
             // checkBox1
             // 
@@ -98,14 +103,6 @@
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(107, 25);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(81, 21);
-            this.comboBox3.TabIndex = 6;
-            // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(29, 70);
@@ -114,13 +111,23 @@
             this.richTextBox1.TabIndex = 7;
             this.richTextBox1.Text = "";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(118, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Color";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 429);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.comboBox2);
@@ -143,8 +150,9 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 
     }
 }
