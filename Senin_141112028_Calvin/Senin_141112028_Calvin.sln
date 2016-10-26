@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latihan_1_2DatetimeVscrollb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latihan_2_1", "Latihan_2_1\Latihan_2_1.csproj", "{7E914E7F-1857-4758-8AF8-DB44A77C08D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latihan_3_1_TextboxVerTI", "Latihan_3_1_TextboxVerTI\Latihan_3_1_TextboxVerTI.csproj", "{46FD6FA5-E29D-4DA6-9C73-9626E6B34F8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latihan_3_1_TextboxVerTISC", "Latihan_3_1_TextboxVerTI\Latihan_3_1_TextboxVerTISC.csproj", "{46FD6FA5-E29D-4DA6-9C73-9626E6B34F8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
