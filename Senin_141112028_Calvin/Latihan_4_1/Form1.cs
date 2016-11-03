@@ -453,5 +453,20 @@ namespace Latihan_4_1
         {
 
         }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+             //   MessageBox.Show(saveFileDialog1.FileName);
+                richTextBox1.SaveFile(saveFileDialog1.FileName);
+
+            }
+        }
     }
 }
