@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latihan_1_1TabIcon", "Latihan_1_1TabIcon\Latihan_1_1TabIcon.csproj", "{E84B72E2-2EA8-4D20-9140-E849260C4C71}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latihan_3_1_TextboxVerTISC", "Latihan_3_1_TextboxVerTI\Latihan_3_1_TextboxVerTISC.csproj", "{46FD6FA5-E29D-4DA6-9C73-9626E6B34F8E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latihan_4_1", "Latihan_4_1\Latihan_4_1.csproj", "{10A4F087-DDAC-49D6-9FDC-FF5788E699C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latihan_5_1", "Latihan_5_1\Latihan_5_1.csproj", "{6863F613-CDBD-44E3-9169-88CD3085388F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{10A4F087-DDAC-49D6-9FDC-FF5788E699C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10A4F087-DDAC-49D6-9FDC-FF5788E699C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10A4F087-DDAC-49D6-9FDC-FF5788E699C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6863F613-CDBD-44E3-9169-88CD3085388F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6863F613-CDBD-44E3-9169-88CD3085388F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6863F613-CDBD-44E3-9169-88CD3085388F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6863F613-CDBD-44E3-9169-88CD3085388F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

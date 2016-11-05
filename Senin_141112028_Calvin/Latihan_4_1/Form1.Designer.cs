@@ -1,4 +1,4 @@
-﻿namespace Latihan_4_1
+﻿namespace Latihan_5_1
 {
     partial class Form1
     {
