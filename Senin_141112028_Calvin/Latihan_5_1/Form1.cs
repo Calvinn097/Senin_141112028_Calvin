@@ -638,6 +638,7 @@ namespace Latihan_5_1
             Form2 frm = new Form2();
             frm.MdiParent = this;
             frm.BringToFront();
+            richTextBox1.SendToBack();
             frm.Show();
         }
 

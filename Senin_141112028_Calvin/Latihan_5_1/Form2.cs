@@ -61,7 +61,10 @@ namespace Latihan_5_1
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
+            if (treeView1.SelectedNode.Text == "Background")
+            {
+                panel1.Visible = true;
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
