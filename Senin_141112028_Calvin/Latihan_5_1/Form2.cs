@@ -13,8 +13,10 @@ using System.Reflection;
 
 namespace Latihan_5_1
 {
+    
     public partial class Form2 : Form
     {
+        public string form_color;
         public Form2()
         {
             InitializeComponent();
@@ -33,11 +35,12 @@ namespace Latihan_5_1
                 }
             }
             this.comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            this.comboBox1.DrawItem += new DrawItemEventHandler(cboBgColor_DrawItem);
+            this.comboBox1.DrawItem += new DrawItemEventHandler(comboBox1_DrawItem);
             this.comboBox1.Text = frm.rtbcolor();
+            form_color = frm.rtbcolor();
         }
 
-        private void cboBgColor_DrawItem(object sender, DrawItemEventArgs e)
+        private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
             // a dropdownlist may initially have no item selected, so skip the highlighting:
             if (e.Index >= 0)
@@ -70,6 +73,29 @@ namespace Latihan_5_1
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 frm = (Form1)MdiParent;
+            frm.setrtbcolor(comboBox1.Text);
+            frm.showrtb();
+            Close();
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 frm = (Form1)MdiParent;
+            frm.setrtbcolor(comboBox1.SelectedIndex.ToString());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 frm = (Form1)MdiParent;
+            frm.setrtbcolor(form_color);
+            frm.showrtb();
+            Close();
         }
 
         

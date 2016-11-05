@@ -639,12 +639,25 @@ namespace Latihan_5_1
             frm.MdiParent = this;
             frm.BringToFront();
             richTextBox1.SendToBack();
+            //richTextBox1.BringToFront();
             frm.Show();
         }
 
         public string rtbcolor()
         {
             return richTextBox1.BackColor.ToString();
+        }
+
+        public void setrtbcolor(string color)
+        {
+            richTextBox1.BackColor = Color.FromName(color);
+            richTextBox1.SelectionBackColor = Color.FromName(color);
+        }
+
+        public void showrtb()
+        {
+            richTextBox1.BringToFront();
+            
         }
     }
 }
