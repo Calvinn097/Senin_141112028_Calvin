@@ -627,5 +627,23 @@ namespace Latihan_5_1
         {
             richTextBox1.Paste();
         }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void editorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.MdiParent = this;
+            frm.BringToFront();
+            frm.Show();
+        }
+
+        public string rtbcolor()
+        {
+            return richTextBox1.BackColor.ToString();
+        }
     }
 }
