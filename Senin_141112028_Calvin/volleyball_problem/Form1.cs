@@ -14,7 +14,9 @@ namespace volleyball_problem
     {
         public Form1()
         {
+
             InitializeComponent();
+            //TxtHasil.Text = (pow2(2, 1)).ToString();
         }
 
 double fakt(double n){
@@ -57,6 +59,18 @@ double comb(double n,double k){
             return a;
         }
 
+        double pow2(double a, double b)
+        {
+            if(b==0) {return 1;}
+            if (b == 1) { return a; }
+            double hasil=1;
+            for(double z=1; z<=b;z++){
+                hasil*=a;
+                hasil = hasil % 1000000007;
+            }
+            return hasil;
+        }
+
         private void BtnHitung_Click(object sender, EventArgs e)
         {
             
@@ -71,17 +85,17 @@ double comb(double n,double k){
             {
                 if (max(a, b) == 25 && min(a, b) < 24)
                 {
-                    TxtHasil.Text = comb(a + b - 1, b).ToString();
+                    TxtHasil.Text = Math.Round((comb(a + b - 1, min(a,b))%1000000007)).ToString();
                 }
-                /**else if (max(a, b) > 24 && min(a, b) > 24 && ((a - b) == 2))
+                else if (max(a, b) >= 24 && min(a, b) >= 24 && (Math.Abs(a - b) == 2))
                 {
-
+                    TxtHasil.Text = Math.Round((comb(48, 24)*Math.Pow(2,max(a,b)-26)) % 1000000007).ToString();
                 }
                 else
                 {
-                    //cout << 0 << endl;
+                    TxtHasil.Text = "0";
                 }
-                 **/
+                 
             }
         }
     }
