@@ -89,7 +89,7 @@ double comb(double n,double k){
                 }
                 else if (max(a, b) >= 24 && min(a, b) >= 24 && (Math.Abs(a - b) == 2))
                 {
-                    TxtHasil.Text = Math.Round((603457371 * pow2(2, min(a, b) - 24)) % 1000000007).ToString();
+                    TxtHasil.Text = ((Math.Round(comb(48, 24) % 1000000007) * pow2(2, min(a, b) - 24)) % 1000000007).ToString();
                 }
                 else
                 {
