@@ -90,36 +90,17 @@ namespace Latihan_POS
             string str_created_at,str_updated_at;
             str_created_at = created_at.ToString("yyyy-MM-dd HH:mm:ss");
             str_updated_at = str_created_at;
-            string cs = "server=localhost;userid=root;password=;database=pos;";
-            MySqlConnection conn = null;
-            
-            try
-            {
-                conn = new MySqlConnection(cs);
-                conn.Open();
-            }
-            catch(MySqlException ex)
-            {
-                MessageBox.Show("Error: {0}", ex.ToString());
-            }
-            
-            MySqlDataAdapter da = new MySqlDataAdapter();
-            string sql= "INSERT INTO barang(ID, Kode, Nama, JumlahAwal, HargaHPP, HargaJual, Created_at, Updated_at) VALUES(@Id,@Kode,@Nama,@JumlahAwal,@HargaHPP,@HargaJual,@Created_at,@Updated_at)";
-            da.InsertCommand= new MySqlCommand(sql,conn);
-            da.InsertCommand.Prepare();
-            da.InsertCommand.Parameters.AddWithValue("@ID", id);
-            da.InsertCommand.Parameters.AddWithValue("@Kode", kode);
-            da.InsertCommand.Parameters.AddWithValue("@Nama", nama);
-            da.InsertCommand.Parameters.AddWithValue("@JumlahAwal", jumlah);
-            da.InsertCommand.Parameters.AddWithValue("@HargaHPP", hargahpp);
-            da.InsertCommand.Parameters.AddWithValue("@HargaJual", hargajual);
-            da.InsertCommand.Parameters.AddWithValue("@Created_at", str_created_at);
-            da.InsertCommand.Parameters.AddWithValue("@Updated_at", str_updated_at);
-            try { da.InsertCommand.ExecuteNonQuery(); }
-            catch (MySqlException ex) { MessageBox.Show(ex.ToString()); }
-            conn.Close();
 
-
+            Barang brg = new Barang();
+            brg.setId(id);
+            brg.setNama(nama);
+            brg.setKode(kode);
+            brg.setJumlah(jumlah);
+            brg.setHargahpp(hargahpp);
+            brg.setHargajual(hargajual);
+            brg.setCreated_at(DateTime.Now);
+            brg.setUpdated_at(DateTime.Now);
+            brg.insert_barang();
             
         }
 
@@ -162,31 +143,14 @@ namespace Latihan_POS
             hidePanel();
             panel_lht_brg.Show();
             panel_lht_brg.Dock = DockStyle.Fill;
-            string cs = "server=localhost;userid=root;password=;database=pos;";
-            MySqlConnection conn = null;
-
-            try
-            {
-                conn = new MySqlConnection(cs);
-                conn.Open();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Error: {0}", ex.ToString());
-            }
             DataSet ds = new DataSet();
-            string sql = "select * from barang";
-            MySqlDataAdapter da = new MySqlDataAdapter(sql,conn);
-            da.Fill(ds, "barang");
+            Barang brg = new Barang();
+            ds = brg.lihat();
             dgvdaftar.ReadOnly = true;
             dgvdaftar.AllowUserToAddRows = false;
             dgvdaftar.AllowUserToDeleteRows = false;
             dgvdaftar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvdaftar.DataSource = ds.Tables["barang"];
-            da.Dispose();
-            conn.Close();
-            
-
         }
 
         private void editBrg_btn_Click(object sender, EventArgs e)
@@ -200,32 +164,15 @@ namespace Latihan_POS
             dateUpdated = DateTime.Now;
             jumlah = editJumlahBrg_tb.Text;
             string s_dateUpdated = dateUpdated.ToString("yyyy-MM-dd HH:mm:ss");
-            string cs = "server=localhost;userid=root;password=;database=pos";
-            MySqlConnection conn = null;
-            conn = new MySqlConnection(cs);
-            conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter();
-            string sql = "update barang set nama = @Nama,HargaHPP=@hargaHPP, HargaJual=@hargaJual,JumlahAwal=@jumlah,Updated_at=@s_dateUpdated where ID = @ID";
-            //string sql = "update barang set nama = '"+nama+"',HargaHPP='"+hargaHPP+"', HargaJual='"+hargaJual+"',JumlahAwal='"+jumlah+"',Updated_at='"+s_dateUpdated+"' Where Kode = '"+id.ToString()+"'";
-            //string sql = "update barang set nama = 'calvin' Where Kode = '" + (4).ToString() + "'";
-            da.UpdateCommand = new MySqlCommand(sql,conn);
-            
-            da.UpdateCommand.Prepare();
-            da.UpdateCommand.Parameters.AddWithValue("@Nama", nama);
-            da.UpdateCommand.Parameters.AddWithValue("@HargaHPP", hargaHPP);
-            da.UpdateCommand.Parameters.AddWithValue("@hargaJual", hargaJual);
-            da.UpdateCommand.Parameters.AddWithValue("@s_dateUpdated", s_dateUpdated);
-            da.UpdateCommand.Parameters.AddWithValue("@ID", id);
-            da.UpdateCommand.Parameters.AddWithValue("@jumlah", jumlah);
-             
-            try
-            {
-                MessageBox.Show(da.UpdateCommand.ExecuteNonQuery().ToString());
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+
+            Barang brg = new Barang();
+            brg.setNama(nama);
+            brg.setsHargahpp(hargaHPP);
+            brg.setsHargajual(hargaJual);
+            brg.setUpdated_at(dateUpdated);
+            brg.setId(id);
+            brg.setJumlah(Convert.ToInt32(jumlah));
+            MessageBox.Show(brg.edit());
             
         }
 
@@ -234,47 +181,24 @@ namespace Latihan_POS
             if (editIdBrg_tb.Text != "")
             {
                 int idBrg = Convert.ToInt32(editIdBrg_tb.Text);
-                MySqlConnection conn = null;
-                string cs = "server=localhost;userid=root;password=;database=pos;";
-                try
-                {
-                    conn = new MySqlConnection(cs);
-                    conn.Open();
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-
-                DataSet ds = new DataSet();
-                string sql = "select * from barang where ID='" + idBrg.ToString() + "'";
-                MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
-                try
-                {
-                    da.Fill(ds, "brg");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-
+                Barang brg = new Barang();
+                brg.setId(idBrg);
+                DataSet ds = brg.lihat();
                 dgv_brg_row.ReadOnly = true;
                 dgv_brg_row.AllowUserToAddRows = false;
                 dgv_brg_row.AllowUserToDeleteRows = false;
                 dgv_brg_row.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                dgv_brg_row.DataSource = ds.Tables["brg"];
+                dgv_brg_row.DataSource = ds.Tables["barang"];
                 if (ds.Tables.Count != 0)
                 {
-                    if (ds.Tables["brg"].Rows.Count != 0)
+                    if (ds.Tables["barang"].Rows.Count != 0)
                     {
-                        editNamaBrg_tb.Text = Convert.ToString(ds.Tables["brg"].Rows[0]["nama"]);
-                        editHargaHPPBrg_tb.Text = Convert.ToString(ds.Tables["brg"].Rows[0]["HargaHPP"]);
-                        editHargaJualBrg_tb.Text = Convert.ToString(ds.Tables["brg"].Rows[0]["HargaJual"]);
-                        editJumlahBrg_tb.Text = Convert.ToString(ds.Tables["brg"].Rows[0]["JumlahAwal"]);
+                        editNamaBrg_tb.Text = Convert.ToString(ds.Tables["barang"].Rows[0]["nama"]);
+                        editHargaHPPBrg_tb.Text = Convert.ToString(ds.Tables["barang"].Rows[0]["HargaHPP"]);
+                        editHargaJualBrg_tb.Text = Convert.ToString(ds.Tables["barang"].Rows[0]["HargaJual"]);
+                        editJumlahBrg_tb.Text = Convert.ToString(ds.Tables["barang"].Rows[0]["JumlahAwal"]);
                     }
                 }
-                da.Dispose();
-                conn.Close();
             }
         }
 
@@ -283,19 +207,10 @@ namespace Latihan_POS
             DialogResult dialogResult = MessageBox.Show("Anda akan menghapus barang ini?", "Hapus Barang?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (dialogResult == DialogResult.Yes)
             {
-                MySqlConnection conn = null;
-                string cs = "server=localhost;userid=root;password=;database=pos";
-                conn = new MySqlConnection(cs);
-                conn.Open();
-                MySqlDataAdapter da = new MySqlDataAdapter();
-                string sql = "delete from barang where id=@id";
-                da.DeleteCommand = new MySqlCommand(sql, conn);
-                da.DeleteCommand.Prepare();
                 string id = editIdBrg_tb.Text;
-                da.DeleteCommand.Parameters.AddWithValue("@id", id);
-                da.DeleteCommand.ExecuteNonQuery();
-                conn.Close();
-                da.Dispose();
+                Barang brg = new Barang();
+                brg.setId(Convert.ToInt32(id));
+                MessageBox.Show(brg.delete());
             }
         }
 
@@ -303,6 +218,7 @@ namespace Latihan_POS
         {
             hidePanel();
             pnlEditBrg.Show();
+            pnlEditBrg.Dock = DockStyle.Fill;
             
         }
 

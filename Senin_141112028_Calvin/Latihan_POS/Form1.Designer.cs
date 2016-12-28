@@ -55,8 +55,10 @@
             this.reg_barang_id_label = new System.Windows.Forms.Label();
             this.register_barang_label = new System.Windows.Forms.Label();
             this.panel_lht_brg = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.dgvdaftar = new System.Windows.Forms.DataGridView();
             this.pnlEditBrg = new System.Windows.Forms.Panel();
+            this.hpsBrg_btn = new System.Windows.Forms.Button();
             this.editReset_btn = new System.Windows.Forms.Button();
             this.editBrg_btn = new System.Windows.Forms.Button();
             this.editJumlahBrg_tb = new System.Windows.Forms.TextBox();
@@ -72,8 +74,6 @@
             this.edit_cek_brg_btn = new System.Windows.Forms.Button();
             this.edit_brg_id_label = new System.Windows.Forms.Label();
             this.editIdBrg_tb = new System.Windows.Forms.TextBox();
-            this.hpsBrg_btn = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel_register_barang.SuspendLayout();
             this.panel_lht_brg.SuspendLayout();
@@ -150,7 +150,7 @@
             // barangToolStripMenuItem2
             // 
             this.barangToolStripMenuItem2.Name = "barangToolStripMenuItem2";
-            this.barangToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.barangToolStripMenuItem2.Size = new System.Drawing.Size(111, 22);
             this.barangToolStripMenuItem2.Text = "Barang";
             this.barangToolStripMenuItem2.Click += new System.EventHandler(this.barangToolStripMenuItem2_Click);
             // 
@@ -326,6 +326,15 @@
             this.panel_lht_brg.TabIndex = 16;
             this.panel_lht_brg.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Lihat Barang";
+            // 
             // dgvdaftar
             // 
             this.dgvdaftar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -356,7 +365,18 @@
             this.pnlEditBrg.Name = "pnlEditBrg";
             this.pnlEditBrg.Size = new System.Drawing.Size(96, 37);
             this.pnlEditBrg.TabIndex = 17;
+            this.pnlEditBrg.Visible = false;
             this.pnlEditBrg.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlEditBrg_Paint);
+            // 
+            // hpsBrg_btn
+            // 
+            this.hpsBrg_btn.Location = new System.Drawing.Point(73, 294);
+            this.hpsBrg_btn.Name = "hpsBrg_btn";
+            this.hpsBrg_btn.Size = new System.Drawing.Size(75, 23);
+            this.hpsBrg_btn.TabIndex = 9;
+            this.hpsBrg_btn.Text = "Hapus";
+            this.hpsBrg_btn.UseVisualStyleBackColor = true;
+            this.hpsBrg_btn.Click += new System.EventHandler(this.hpsBrg_btn_Click);
             // 
             // editReset_btn
             // 
@@ -484,25 +504,6 @@
             this.editIdBrg_tb.Name = "editIdBrg_tb";
             this.editIdBrg_tb.Size = new System.Drawing.Size(100, 20);
             this.editIdBrg_tb.TabIndex = 0;
-            // 
-            // hpsBrg_btn
-            // 
-            this.hpsBrg_btn.Location = new System.Drawing.Point(73, 294);
-            this.hpsBrg_btn.Name = "hpsBrg_btn";
-            this.hpsBrg_btn.Size = new System.Drawing.Size(75, 23);
-            this.hpsBrg_btn.TabIndex = 9;
-            this.hpsBrg_btn.Text = "Hapus";
-            this.hpsBrg_btn.UseVisualStyleBackColor = true;
-            this.hpsBrg_btn.Click += new System.EventHandler(this.hpsBrg_btn_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Lihat Barang";
             // 
             // Form1
             // 
