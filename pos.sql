@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2016 at 06:14 PM
--- Server version: 5.6.26
--- PHP Version: 5.5.28
+-- Generation Time: Dec 29, 2016 at 12:00 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `barang`
 --
 
-CREATE TABLE IF NOT EXISTS `barang` (
+CREATE TABLE `barang` (
   `ID` int(10) NOT NULL,
   `Kode` varchar(20) DEFAULT NULL,
   `Nama` varchar(100) DEFAULT NULL,
@@ -43,9 +43,25 @@ CREATE TABLE IF NOT EXISTS `barang` (
 
 INSERT INTO `barang` (`ID`, `Kode`, `Nama`, `JumlahAwal`, `HargaHPP`, `HargaJual`, `Created_at`, `Updated_at`) VALUES
 (1, 'N1', 'Nokia', 400, '550000.00', '550000.00', '2016-12-04 21:57:48', '2016-12-04 21:57:48'),
-(2, 'K4', 'Kingston', 20, '550000.00', '550000.00', '2016-12-04 22:07:27', '2016-12-04 22:07:27'),
+(2, 'K4', 'Kingston', 20, '550001.00', '550000.00', '2016-12-04 22:07:27', '2016-12-29 11:34:08'),
 (3, 'QQ', 'Quaker', 20, '40000.00', '40000.00', '2016-12-04 22:12:02', '2016-12-04 22:12:02'),
 (4, 'Sams01', 'Samsung Galaxy Ace 3', 10, '2000000.00', '2000000.00', '2016-12-11 13:18:32', '2016-12-11 20:49:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `ID` int(10) DEFAULT NULL,
+  `Nama` varchar(20) DEFAULT NULL,
+  `Alamat` varchar(50) DEFAULT NULL,
+  `NoHp` varchar(12) DEFAULT NULL,
+  `Gender` varchar(12) DEFAULT NULL,
+  `Created_at` datetime DEFAULT NULL,
+  `Edited_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -53,7 +69,7 @@ INSERT INTO `barang` (`ID`, `Kode`, `Nama`, `JumlahAwal`, `HargaHPP`, `HargaJual
 -- Table structure for table `staff`
 --
 
-CREATE TABLE IF NOT EXISTS `staff` (
+CREATE TABLE `staff` (
   `StaffID` int(11) NOT NULL,
   `Staffname` varchar(50) NOT NULL,
   `DateJoin` date NOT NULL,

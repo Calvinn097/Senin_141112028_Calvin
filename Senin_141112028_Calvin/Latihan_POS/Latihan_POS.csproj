@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Barang.cs" />
     <Compile Include="BCrypt.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="Dbconn.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
