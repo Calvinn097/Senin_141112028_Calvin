@@ -31,10 +31,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrasiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.keluarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lihatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barangToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cusomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barangToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_register_barang = new System.Windows.Forms.Panel();
@@ -74,12 +76,90 @@
             this.edit_cek_brg_btn = new System.Windows.Forms.Button();
             this.edit_brg_id_label = new System.Windows.Forms.Label();
             this.editIdBrg_tb = new System.Windows.Forms.TextBox();
+            this.register_user_pnl = new System.Windows.Forms.Panel();
+            this.batalCusInpBtn = new System.Windows.Forms.Button();
+            this.simpanCusInpBtn = new System.Windows.Forms.Button();
+            this.noHpCusInpTB = new System.Windows.Forms.TextBox();
+            this.alamatCusInpTB = new System.Windows.Forms.TextBox();
+            this.namaCusInpTB = new System.Windows.Forms.TextBox();
+            this.GenderL = new System.Windows.Forms.Label();
+            this.genderBoxInpCB = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label_alamat = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panelLhtCust = new System.Windows.Forms.Panel();
+            this.custListDgv = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
+            this.editCustPanel = new System.Windows.Forms.Panel();
+            this.hpsCustBTN = new System.Windows.Forms.Button();
+            this.cekCustBTN = new System.Windows.Forms.Button();
+            this.simpanEditBTN = new System.Windows.Forms.Button();
+            this.genderCustEditTB = new System.Windows.Forms.ComboBox();
+            this.noHpCusEditTB = new System.Windows.Forms.TextBox();
+            this.alamatCusEditTB = new System.Windows.Forms.TextBox();
+            this.namaCustEditTB = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cekCustDGV = new System.Windows.Forms.DataGridView();
+            this.idCustEditBTN = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.customerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label17 = new System.Windows.Forms.Label();
+            this.editSupPanel = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.delSupEditBTN = new System.Windows.Forms.Button();
+            this.cekSupEditBTN = new System.Windows.Forms.Button();
+            this.saveSupEditBTN = new System.Windows.Forms.Button();
+            this.genderSupCB = new System.Windows.Forms.ComboBox();
+            this.noHPSupEditTB = new System.Windows.Forms.TextBox();
+            this.alamatSupEditTB = new System.Windows.Forms.TextBox();
+            this.namaSupEditTB = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.cekSupDGV = new System.Windows.Forms.DataGridView();
+            this.idSupEditTB = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lihatSupPanel = new System.Windows.Forms.Panel();
+            this.lihatSupDGV = new System.Windows.Forms.DataGridView();
+            this.label24 = new System.Windows.Forms.Label();
+            this.regisSupPanel = new System.Windows.Forms.Panel();
+            this.batalSupInpBTN = new System.Windows.Forms.Button();
+            this.simpanSupBTN = new System.Windows.Forms.Button();
+            this.noHPSupTB = new System.Windows.Forms.TextBox();
+            this.alamatSupInpTB = new System.Windows.Forms.TextBox();
+            this.namaSupInpTB = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.genderSupTB = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel_register_barang.SuspendLayout();
             this.panel_lht_brg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdaftar)).BeginInit();
             this.pnlEditBrg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_brg_row)).BeginInit();
+            this.register_user_pnl.SuspendLayout();
+            this.panelLhtCust.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.custListDgv)).BeginInit();
+            this.editCustPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cekCustDGV)).BeginInit();
+            this.editSupPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cekSupDGV)).BeginInit();
+            this.lihatSupPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lihatSupDGV)).BeginInit();
+            this.regisSupPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -99,6 +179,8 @@
             // 
             this.registrasiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.barangToolStripMenuItem,
+            this.supplierToolStripMenuItem,
+            this.customerToolStripMenuItem,
             this.toolStripMenuItem1,
             this.keluarToolStripMenuItem});
             this.registrasiToolStripMenuItem.Name = "registrasiToolStripMenuItem";
@@ -108,26 +190,35 @@
             // barangToolStripMenuItem
             // 
             this.barangToolStripMenuItem.Name = "barangToolStripMenuItem";
-            this.barangToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.barangToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.barangToolStripMenuItem.Text = "Barang";
             this.barangToolStripMenuItem.Click += new System.EventHandler(this.barangToolStripMenuItem_Click);
+            // 
+            // customerToolStripMenuItem
+            // 
+            this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customerToolStripMenuItem.Text = "Customer";
+            this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(108, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // keluarToolStripMenuItem
             // 
             this.keluarToolStripMenuItem.Name = "keluarToolStripMenuItem";
-            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.keluarToolStripMenuItem.Text = "Keluar";
             this.keluarToolStripMenuItem.Click += new System.EventHandler(this.keluarToolStripMenuItem_Click);
             // 
             // lihatToolStripMenuItem
             // 
             this.lihatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.barangToolStripMenuItem1});
+            this.barangToolStripMenuItem1,
+            this.cusomerToolStripMenuItem,
+            this.supplierToolStripMenuItem1});
             this.lihatToolStripMenuItem.Name = "lihatToolStripMenuItem";
             this.lihatToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.lihatToolStripMenuItem.Text = "Lihat";
@@ -135,14 +226,23 @@
             // barangToolStripMenuItem1
             // 
             this.barangToolStripMenuItem1.Name = "barangToolStripMenuItem1";
-            this.barangToolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
+            this.barangToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.barangToolStripMenuItem1.Text = "Barang";
             this.barangToolStripMenuItem1.Click += new System.EventHandler(this.barangToolStripMenuItem1_Click);
+            // 
+            // cusomerToolStripMenuItem
+            // 
+            this.cusomerToolStripMenuItem.Name = "cusomerToolStripMenuItem";
+            this.cusomerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cusomerToolStripMenuItem.Text = "Customer";
+            this.cusomerToolStripMenuItem.Click += new System.EventHandler(this.cusomerToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.barangToolStripMenuItem2});
+            this.barangToolStripMenuItem2,
+            this.customerToolStripMenuItem1,
+            this.supplierToolStripMenuItem2});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
@@ -150,7 +250,7 @@
             // barangToolStripMenuItem2
             // 
             this.barangToolStripMenuItem2.Name = "barangToolStripMenuItem2";
-            this.barangToolStripMenuItem2.Size = new System.Drawing.Size(111, 22);
+            this.barangToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.barangToolStripMenuItem2.Text = "Barang";
             this.barangToolStripMenuItem2.Click += new System.EventHandler(this.barangToolStripMenuItem2_Click);
             // 
@@ -174,7 +274,7 @@
             this.panel_register_barang.Controls.Add(this.register_barang_label);
             this.panel_register_barang.Location = new System.Drawing.Point(12, 36);
             this.panel_register_barang.Name = "panel_register_barang";
-            this.panel_register_barang.Size = new System.Drawing.Size(198, 47);
+            this.panel_register_barang.Size = new System.Drawing.Size(189, 47);
             this.panel_register_barang.TabIndex = 1;
             this.panel_register_barang.Visible = false;
             // 
@@ -322,7 +422,7 @@
             this.panel_lht_brg.Controls.Add(this.dgvdaftar);
             this.panel_lht_brg.Location = new System.Drawing.Point(216, 42);
             this.panel_lht_brg.Name = "panel_lht_brg";
-            this.panel_lht_brg.Size = new System.Drawing.Size(153, 41);
+            this.panel_lht_brg.Size = new System.Drawing.Size(182, 23);
             this.panel_lht_brg.TabIndex = 16;
             this.panel_lht_brg.Visible = false;
             // 
@@ -505,11 +605,658 @@
             this.editIdBrg_tb.Size = new System.Drawing.Size(100, 20);
             this.editIdBrg_tb.TabIndex = 0;
             // 
+            // register_user_pnl
+            // 
+            this.register_user_pnl.Controls.Add(this.batalCusInpBtn);
+            this.register_user_pnl.Controls.Add(this.simpanCusInpBtn);
+            this.register_user_pnl.Controls.Add(this.noHpCusInpTB);
+            this.register_user_pnl.Controls.Add(this.alamatCusInpTB);
+            this.register_user_pnl.Controls.Add(this.namaCusInpTB);
+            this.register_user_pnl.Controls.Add(this.GenderL);
+            this.register_user_pnl.Controls.Add(this.genderBoxInpCB);
+            this.register_user_pnl.Controls.Add(this.label10);
+            this.register_user_pnl.Controls.Add(this.label_alamat);
+            this.register_user_pnl.Controls.Add(this.label9);
+            this.register_user_pnl.Controls.Add(this.label8);
+            this.register_user_pnl.Controls.Add(this.label7);
+            this.register_user_pnl.Location = new System.Drawing.Point(12, 103);
+            this.register_user_pnl.Name = "register_user_pnl";
+            this.register_user_pnl.Size = new System.Drawing.Size(153, 52);
+            this.register_user_pnl.TabIndex = 18;
+            this.register_user_pnl.Visible = false;
+            // 
+            // batalCusInpBtn
+            // 
+            this.batalCusInpBtn.Location = new System.Drawing.Point(457, 273);
+            this.batalCusInpBtn.Name = "batalCusInpBtn";
+            this.batalCusInpBtn.Size = new System.Drawing.Size(75, 23);
+            this.batalCusInpBtn.TabIndex = 11;
+            this.batalCusInpBtn.Text = "Batal";
+            this.batalCusInpBtn.UseVisualStyleBackColor = true;
+            this.batalCusInpBtn.Click += new System.EventHandler(this.batalCusInpBtn_Click);
+            // 
+            // simpanCusInpBtn
+            // 
+            this.simpanCusInpBtn.Location = new System.Drawing.Point(457, 234);
+            this.simpanCusInpBtn.Name = "simpanCusInpBtn";
+            this.simpanCusInpBtn.Size = new System.Drawing.Size(75, 23);
+            this.simpanCusInpBtn.TabIndex = 10;
+            this.simpanCusInpBtn.Text = "Simpan";
+            this.simpanCusInpBtn.UseVisualStyleBackColor = true;
+            this.simpanCusInpBtn.Click += new System.EventHandler(this.simpanCusInpBtn_Click);
+            // 
+            // noHpCusInpTB
+            // 
+            this.noHpCusInpTB.Location = new System.Drawing.Point(277, 275);
+            this.noHpCusInpTB.Name = "noHpCusInpTB";
+            this.noHpCusInpTB.Size = new System.Drawing.Size(100, 20);
+            this.noHpCusInpTB.TabIndex = 9;
+            // 
+            // alamatCusInpTB
+            // 
+            this.alamatCusInpTB.Location = new System.Drawing.Point(277, 207);
+            this.alamatCusInpTB.Name = "alamatCusInpTB";
+            this.alamatCusInpTB.Size = new System.Drawing.Size(100, 20);
+            this.alamatCusInpTB.TabIndex = 8;
+            // 
+            // namaCusInpTB
+            // 
+            this.namaCusInpTB.Location = new System.Drawing.Point(277, 175);
+            this.namaCusInpTB.Name = "namaCusInpTB";
+            this.namaCusInpTB.Size = new System.Drawing.Size(100, 20);
+            this.namaCusInpTB.TabIndex = 7;
+            // 
+            // GenderL
+            // 
+            this.GenderL.AutoSize = true;
+            this.GenderL.Location = new System.Drawing.Point(220, 244);
+            this.GenderL.Name = "GenderL";
+            this.GenderL.Size = new System.Drawing.Size(42, 13);
+            this.GenderL.TabIndex = 6;
+            this.GenderL.Text = "Gender";
+            // 
+            // genderBoxInpCB
+            // 
+            this.genderBoxInpCB.FormattingEnabled = true;
+            this.genderBoxInpCB.Items.AddRange(new object[] {
+            "Laki-Laki",
+            "Perempuan"});
+            this.genderBoxInpCB.Location = new System.Drawing.Point(277, 241);
+            this.genderBoxInpCB.Name = "genderBoxInpCB";
+            this.genderBoxInpCB.Size = new System.Drawing.Size(121, 21);
+            this.genderBoxInpCB.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(219, 276);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "No HP";
+            // 
+            // label_alamat
+            // 
+            this.label_alamat.AutoSize = true;
+            this.label_alamat.Location = new System.Drawing.Point(219, 207);
+            this.label_alamat.Name = "label_alamat";
+            this.label_alamat.Size = new System.Drawing.Size(39, 13);
+            this.label_alamat.TabIndex = 3;
+            this.label_alamat.Text = "Alamat";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(220, 175);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Nama";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Register Customer";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 13);
+            this.label7.TabIndex = 0;
+            // 
+            // panelLhtCust
+            // 
+            this.panelLhtCust.Controls.Add(this.custListDgv);
+            this.panelLhtCust.Controls.Add(this.label11);
+            this.panelLhtCust.Location = new System.Drawing.Point(189, 103);
+            this.panelLhtCust.Name = "panelLhtCust";
+            this.panelLhtCust.Size = new System.Drawing.Size(175, 47);
+            this.panelLhtCust.TabIndex = 19;
+            this.panelLhtCust.Visible = false;
+            // 
+            // custListDgv
+            // 
+            this.custListDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.custListDgv.Location = new System.Drawing.Point(27, 56);
+            this.custListDgv.Name = "custListDgv";
+            this.custListDgv.Size = new System.Drawing.Size(818, 413);
+            this.custListDgv.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(19, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Lihat Customer";
+            // 
+            // editCustPanel
+            // 
+            this.editCustPanel.Controls.Add(this.label17);
+            this.editCustPanel.Controls.Add(this.hpsCustBTN);
+            this.editCustPanel.Controls.Add(this.cekCustBTN);
+            this.editCustPanel.Controls.Add(this.simpanEditBTN);
+            this.editCustPanel.Controls.Add(this.genderCustEditTB);
+            this.editCustPanel.Controls.Add(this.noHpCusEditTB);
+            this.editCustPanel.Controls.Add(this.alamatCusEditTB);
+            this.editCustPanel.Controls.Add(this.namaCustEditTB);
+            this.editCustPanel.Controls.Add(this.label16);
+            this.editCustPanel.Controls.Add(this.label15);
+            this.editCustPanel.Controls.Add(this.label14);
+            this.editCustPanel.Controls.Add(this.label13);
+            this.editCustPanel.Controls.Add(this.cekCustDGV);
+            this.editCustPanel.Controls.Add(this.idCustEditBTN);
+            this.editCustPanel.Controls.Add(this.label12);
+            this.editCustPanel.Location = new System.Drawing.Point(387, 99);
+            this.editCustPanel.Name = "editCustPanel";
+            this.editCustPanel.Size = new System.Drawing.Size(225, 54);
+            this.editCustPanel.TabIndex = 20;
+            this.editCustPanel.Visible = false;
+            // 
+            // hpsCustBTN
+            // 
+            this.hpsCustBTN.Location = new System.Drawing.Point(372, 276);
+            this.hpsCustBTN.Name = "hpsCustBTN";
+            this.hpsCustBTN.Size = new System.Drawing.Size(75, 23);
+            this.hpsCustBTN.TabIndex = 12;
+            this.hpsCustBTN.Text = "Hapus";
+            this.hpsCustBTN.UseVisualStyleBackColor = true;
+            this.hpsCustBTN.Click += new System.EventHandler(this.hpsCustBTN_Click);
+            // 
+            // cekCustBTN
+            // 
+            this.cekCustBTN.Location = new System.Drawing.Point(469, 52);
+            this.cekCustBTN.Name = "cekCustBTN";
+            this.cekCustBTN.Size = new System.Drawing.Size(75, 23);
+            this.cekCustBTN.TabIndex = 11;
+            this.cekCustBTN.Text = "Cek";
+            this.cekCustBTN.UseVisualStyleBackColor = true;
+            this.cekCustBTN.Click += new System.EventHandler(this.cekCustBTN_Click);
+            // 
+            // simpanEditBTN
+            // 
+            this.simpanEditBTN.Location = new System.Drawing.Point(372, 233);
+            this.simpanEditBTN.Name = "simpanEditBTN";
+            this.simpanEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.simpanEditBTN.TabIndex = 11;
+            this.simpanEditBTN.Text = "Simpan";
+            this.simpanEditBTN.UseVisualStyleBackColor = true;
+            this.simpanEditBTN.Click += new System.EventHandler(this.simpanEditBTN_Click);
+            // 
+            // genderCustEditTB
+            // 
+            this.genderCustEditTB.FormattingEnabled = true;
+            this.genderCustEditTB.Items.AddRange(new object[] {
+            "Laki-Laki",
+            "Perempuan"});
+            this.genderCustEditTB.Location = new System.Drawing.Point(97, 338);
+            this.genderCustEditTB.Name = "genderCustEditTB";
+            this.genderCustEditTB.Size = new System.Drawing.Size(121, 21);
+            this.genderCustEditTB.TabIndex = 10;
+            // 
+            // noHpCusEditTB
+            // 
+            this.noHpCusEditTB.Location = new System.Drawing.Point(97, 304);
+            this.noHpCusEditTB.Name = "noHpCusEditTB";
+            this.noHpCusEditTB.Size = new System.Drawing.Size(100, 20);
+            this.noHpCusEditTB.TabIndex = 9;
+            // 
+            // alamatCusEditTB
+            // 
+            this.alamatCusEditTB.Location = new System.Drawing.Point(97, 278);
+            this.alamatCusEditTB.Name = "alamatCusEditTB";
+            this.alamatCusEditTB.Size = new System.Drawing.Size(100, 20);
+            this.alamatCusEditTB.TabIndex = 8;
+            // 
+            // namaCustEditTB
+            // 
+            this.namaCustEditTB.Location = new System.Drawing.Point(97, 244);
+            this.namaCustEditTB.Name = "namaCustEditTB";
+            this.namaCustEditTB.Size = new System.Drawing.Size(100, 20);
+            this.namaCustEditTB.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(31, 338);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(42, 13);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Gender";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(31, 312);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(39, 13);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "No HP";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(30, 282);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(39, 13);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Alamat";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(28, 251);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Nama";
+            // 
+            // cekCustDGV
+            // 
+            this.cekCustDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cekCustDGV.Location = new System.Drawing.Point(16, 85);
+            this.cekCustDGV.Name = "cekCustDGV";
+            this.cekCustDGV.Size = new System.Drawing.Size(844, 84);
+            this.cekCustDGV.TabIndex = 2;
+            this.cekCustDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idCustEditBTN
+            // 
+            this.idCustEditBTN.Location = new System.Drawing.Point(348, 57);
+            this.idCustEditBTN.Name = "idCustEditBTN";
+            this.idCustEditBTN.Size = new System.Drawing.Size(100, 20);
+            this.idCustEditBTN.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(264, 57);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(65, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "ID Customer";
+            // 
+            // customerToolStripMenuItem1
+            // 
+            this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.customerToolStripMenuItem1.Text = "Customer";
+            this.customerToolStripMenuItem1.Click += new System.EventHandler(this.customerToolStripMenuItem1_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(25, 24);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(72, 13);
+            this.label17.TabIndex = 13;
+            this.label17.Text = "Edit Customer";
+            // 
+            // editSupPanel
+            // 
+            this.editSupPanel.Controls.Add(this.label18);
+            this.editSupPanel.Controls.Add(this.delSupEditBTN);
+            this.editSupPanel.Controls.Add(this.cekSupEditBTN);
+            this.editSupPanel.Controls.Add(this.saveSupEditBTN);
+            this.editSupPanel.Controls.Add(this.genderSupCB);
+            this.editSupPanel.Controls.Add(this.noHPSupEditTB);
+            this.editSupPanel.Controls.Add(this.alamatSupEditTB);
+            this.editSupPanel.Controls.Add(this.namaSupEditTB);
+            this.editSupPanel.Controls.Add(this.label19);
+            this.editSupPanel.Controls.Add(this.label20);
+            this.editSupPanel.Controls.Add(this.label21);
+            this.editSupPanel.Controls.Add(this.label22);
+            this.editSupPanel.Controls.Add(this.cekSupDGV);
+            this.editSupPanel.Controls.Add(this.idSupEditTB);
+            this.editSupPanel.Controls.Add(this.label23);
+            this.editSupPanel.Location = new System.Drawing.Point(387, 185);
+            this.editSupPanel.Name = "editSupPanel";
+            this.editSupPanel.Size = new System.Drawing.Size(225, 54);
+            this.editSupPanel.TabIndex = 23;
+            this.editSupPanel.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(25, 24);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(66, 13);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Edit Supplier";
+            // 
+            // delSupEditBTN
+            // 
+            this.delSupEditBTN.Location = new System.Drawing.Point(372, 276);
+            this.delSupEditBTN.Name = "delSupEditBTN";
+            this.delSupEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.delSupEditBTN.TabIndex = 12;
+            this.delSupEditBTN.Text = "Hapus";
+            this.delSupEditBTN.UseVisualStyleBackColor = true;
+            this.delSupEditBTN.Click += new System.EventHandler(this.delSupEditBTN_Click);
+            // 
+            // cekSupEditBTN
+            // 
+            this.cekSupEditBTN.Location = new System.Drawing.Point(469, 52);
+            this.cekSupEditBTN.Name = "cekSupEditBTN";
+            this.cekSupEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.cekSupEditBTN.TabIndex = 11;
+            this.cekSupEditBTN.Text = "Cek";
+            this.cekSupEditBTN.UseVisualStyleBackColor = true;
+            this.cekSupEditBTN.Click += new System.EventHandler(this.cekSupEditBTN_Click);
+            // 
+            // saveSupEditBTN
+            // 
+            this.saveSupEditBTN.Location = new System.Drawing.Point(372, 233);
+            this.saveSupEditBTN.Name = "saveSupEditBTN";
+            this.saveSupEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.saveSupEditBTN.TabIndex = 11;
+            this.saveSupEditBTN.Text = "Simpan";
+            this.saveSupEditBTN.UseVisualStyleBackColor = true;
+            this.saveSupEditBTN.Click += new System.EventHandler(this.saveSupEditBTN_Click);
+            // 
+            // genderSupCB
+            // 
+            this.genderSupCB.FormattingEnabled = true;
+            this.genderSupCB.Items.AddRange(new object[] {
+            "Laki-Laki",
+            "Perempuan"});
+            this.genderSupCB.Location = new System.Drawing.Point(97, 338);
+            this.genderSupCB.Name = "genderSupCB";
+            this.genderSupCB.Size = new System.Drawing.Size(121, 21);
+            this.genderSupCB.TabIndex = 10;
+            // 
+            // noHPSupEditTB
+            // 
+            this.noHPSupEditTB.Location = new System.Drawing.Point(97, 304);
+            this.noHPSupEditTB.Name = "noHPSupEditTB";
+            this.noHPSupEditTB.Size = new System.Drawing.Size(100, 20);
+            this.noHPSupEditTB.TabIndex = 9;
+            // 
+            // alamatSupEditTB
+            // 
+            this.alamatSupEditTB.Location = new System.Drawing.Point(97, 278);
+            this.alamatSupEditTB.Name = "alamatSupEditTB";
+            this.alamatSupEditTB.Size = new System.Drawing.Size(100, 20);
+            this.alamatSupEditTB.TabIndex = 8;
+            // 
+            // namaSupEditTB
+            // 
+            this.namaSupEditTB.Location = new System.Drawing.Point(97, 244);
+            this.namaSupEditTB.Name = "namaSupEditTB";
+            this.namaSupEditTB.Size = new System.Drawing.Size(100, 20);
+            this.namaSupEditTB.TabIndex = 7;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(31, 338);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(42, 13);
+            this.label19.TabIndex = 6;
+            this.label19.Text = "Gender";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(31, 312);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(39, 13);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "No HP";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(30, 282);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(39, 13);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Alamat";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(28, 251);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(35, 13);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Nama";
+            // 
+            // cekSupDGV
+            // 
+            this.cekSupDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cekSupDGV.Location = new System.Drawing.Point(16, 85);
+            this.cekSupDGV.Name = "cekSupDGV";
+            this.cekSupDGV.Size = new System.Drawing.Size(844, 84);
+            this.cekSupDGV.TabIndex = 2;
+            // 
+            // idSupEditTB
+            // 
+            this.idSupEditTB.Location = new System.Drawing.Point(348, 57);
+            this.idSupEditTB.Name = "idSupEditTB";
+            this.idSupEditTB.Size = new System.Drawing.Size(100, 20);
+            this.idSupEditTB.TabIndex = 1;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(264, 57);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(59, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "ID Supplier";
+            // 
+            // lihatSupPanel
+            // 
+            this.lihatSupPanel.Controls.Add(this.lihatSupDGV);
+            this.lihatSupPanel.Controls.Add(this.label24);
+            this.lihatSupPanel.Location = new System.Drawing.Point(189, 188);
+            this.lihatSupPanel.Name = "lihatSupPanel";
+            this.lihatSupPanel.Size = new System.Drawing.Size(175, 48);
+            this.lihatSupPanel.TabIndex = 22;
+            this.lihatSupPanel.Visible = false;
+            // 
+            // lihatSupDGV
+            // 
+            this.lihatSupDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lihatSupDGV.Location = new System.Drawing.Point(27, 56);
+            this.lihatSupDGV.Name = "lihatSupDGV";
+            this.lihatSupDGV.Size = new System.Drawing.Size(818, 413);
+            this.lihatSupDGV.TabIndex = 1;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(19, 22);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(71, 13);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Lihat Supplier";
+            // 
+            // regisSupPanel
+            // 
+            this.regisSupPanel.Controls.Add(this.batalSupInpBTN);
+            this.regisSupPanel.Controls.Add(this.simpanSupBTN);
+            this.regisSupPanel.Controls.Add(this.noHPSupTB);
+            this.regisSupPanel.Controls.Add(this.alamatSupInpTB);
+            this.regisSupPanel.Controls.Add(this.namaSupInpTB);
+            this.regisSupPanel.Controls.Add(this.label25);
+            this.regisSupPanel.Controls.Add(this.genderSupTB);
+            this.regisSupPanel.Controls.Add(this.label26);
+            this.regisSupPanel.Controls.Add(this.label27);
+            this.regisSupPanel.Controls.Add(this.label28);
+            this.regisSupPanel.Controls.Add(this.label29);
+            this.regisSupPanel.Controls.Add(this.label30);
+            this.regisSupPanel.Location = new System.Drawing.Point(12, 189);
+            this.regisSupPanel.Name = "regisSupPanel";
+            this.regisSupPanel.Size = new System.Drawing.Size(153, 52);
+            this.regisSupPanel.TabIndex = 21;
+            this.regisSupPanel.Visible = false;
+            // 
+            // batalSupInpBTN
+            // 
+            this.batalSupInpBTN.Location = new System.Drawing.Point(457, 273);
+            this.batalSupInpBTN.Name = "batalSupInpBTN";
+            this.batalSupInpBTN.Size = new System.Drawing.Size(75, 23);
+            this.batalSupInpBTN.TabIndex = 11;
+            this.batalSupInpBTN.Text = "Batal";
+            this.batalSupInpBTN.UseVisualStyleBackColor = true;
+            this.batalSupInpBTN.Click += new System.EventHandler(this.batalSupInpBTN_Click);
+            // 
+            // simpanSupBTN
+            // 
+            this.simpanSupBTN.Location = new System.Drawing.Point(457, 234);
+            this.simpanSupBTN.Name = "simpanSupBTN";
+            this.simpanSupBTN.Size = new System.Drawing.Size(75, 23);
+            this.simpanSupBTN.TabIndex = 10;
+            this.simpanSupBTN.Text = "Simpan";
+            this.simpanSupBTN.UseVisualStyleBackColor = true;
+            this.simpanSupBTN.Click += new System.EventHandler(this.simpanSupBTN_Click);
+            // 
+            // noHPSupTB
+            // 
+            this.noHPSupTB.Location = new System.Drawing.Point(277, 275);
+            this.noHPSupTB.Name = "noHPSupTB";
+            this.noHPSupTB.Size = new System.Drawing.Size(100, 20);
+            this.noHPSupTB.TabIndex = 9;
+            // 
+            // alamatSupInpTB
+            // 
+            this.alamatSupInpTB.Location = new System.Drawing.Point(277, 207);
+            this.alamatSupInpTB.Name = "alamatSupInpTB";
+            this.alamatSupInpTB.Size = new System.Drawing.Size(100, 20);
+            this.alamatSupInpTB.TabIndex = 8;
+            // 
+            // namaSupInpTB
+            // 
+            this.namaSupInpTB.Location = new System.Drawing.Point(277, 175);
+            this.namaSupInpTB.Name = "namaSupInpTB";
+            this.namaSupInpTB.Size = new System.Drawing.Size(100, 20);
+            this.namaSupInpTB.TabIndex = 7;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(220, 244);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(42, 13);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Gender";
+            // 
+            // genderSupTB
+            // 
+            this.genderSupTB.FormattingEnabled = true;
+            this.genderSupTB.Items.AddRange(new object[] {
+            "Laki-Laki",
+            "Perempuan"});
+            this.genderSupTB.Location = new System.Drawing.Point(277, 241);
+            this.genderSupTB.Name = "genderSupTB";
+            this.genderSupTB.Size = new System.Drawing.Size(121, 21);
+            this.genderSupTB.TabIndex = 5;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(219, 276);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(39, 13);
+            this.label26.TabIndex = 4;
+            this.label26.Text = "No HP";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(219, 207);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(39, 13);
+            this.label27.TabIndex = 3;
+            this.label27.Text = "Alamat";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(220, 175);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(35, 13);
+            this.label28.TabIndex = 2;
+            this.label28.Text = "Nama";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(15, 18);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(87, 13);
+            this.label29.TabIndex = 1;
+            this.label29.Text = "Register Supplier";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(28, 26);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(0, 13);
+            this.label30.TabIndex = 0;
+            // 
+            // supplierToolStripMenuItem
+            // 
+            this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
+            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.supplierToolStripMenuItem.Text = "Supplier";
+            this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
+            // 
+            // supplierToolStripMenuItem1
+            // 
+            this.supplierToolStripMenuItem1.Name = "supplierToolStripMenuItem1";
+            this.supplierToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.supplierToolStripMenuItem1.Text = "Supplier";
+            this.supplierToolStripMenuItem1.Click += new System.EventHandler(this.supplierToolStripMenuItem1_Click);
+            // 
+            // supplierToolStripMenuItem2
+            // 
+            this.supplierToolStripMenuItem2.Name = "supplierToolStripMenuItem2";
+            this.supplierToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.supplierToolStripMenuItem2.Text = "Supplier";
+            this.supplierToolStripMenuItem2.Click += new System.EventHandler(this.supplierToolStripMenuItem2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 523);
+            this.Controls.Add(this.editSupPanel);
+            this.Controls.Add(this.lihatSupPanel);
+            this.Controls.Add(this.regisSupPanel);
+            this.Controls.Add(this.editCustPanel);
+            this.Controls.Add(this.panelLhtCust);
+            this.Controls.Add(this.register_user_pnl);
             this.Controls.Add(this.pnlEditBrg);
             this.Controls.Add(this.panel_register_barang);
             this.Controls.Add(this.menuStrip1);
@@ -528,6 +1275,22 @@
             this.pnlEditBrg.ResumeLayout(false);
             this.pnlEditBrg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_brg_row)).EndInit();
+            this.register_user_pnl.ResumeLayout(false);
+            this.register_user_pnl.PerformLayout();
+            this.panelLhtCust.ResumeLayout(false);
+            this.panelLhtCust.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.custListDgv)).EndInit();
+            this.editCustPanel.ResumeLayout(false);
+            this.editCustPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cekCustDGV)).EndInit();
+            this.editSupPanel.ResumeLayout(false);
+            this.editSupPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cekSupDGV)).EndInit();
+            this.lihatSupPanel.ResumeLayout(false);
+            this.lihatSupPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lihatSupDGV)).EndInit();
+            this.regisSupPanel.ResumeLayout(false);
+            this.regisSupPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,6 +1344,76 @@
         private System.Windows.Forms.Button editReset_btn;
         private System.Windows.Forms.Button hpsBrg_btn;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel register_user_pnl;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button batalCusInpBtn;
+        private System.Windows.Forms.Button simpanCusInpBtn;
+        private System.Windows.Forms.TextBox noHpCusInpTB;
+        private System.Windows.Forms.TextBox alamatCusInpTB;
+        private System.Windows.Forms.TextBox namaCusInpTB;
+        private System.Windows.Forms.Label GenderL;
+        private System.Windows.Forms.ComboBox genderBoxInpCB;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label_alamat;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panelLhtCust;
+        private System.Windows.Forms.DataGridView custListDgv;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ToolStripMenuItem cusomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
+        private System.Windows.Forms.Panel editCustPanel;
+        private System.Windows.Forms.Button hpsCustBTN;
+        private System.Windows.Forms.Button cekCustBTN;
+        private System.Windows.Forms.Button simpanEditBTN;
+        private System.Windows.Forms.ComboBox genderCustEditTB;
+        private System.Windows.Forms.TextBox noHpCusEditTB;
+        private System.Windows.Forms.TextBox alamatCusEditTB;
+        private System.Windows.Forms.TextBox namaCustEditTB;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView cekCustDGV;
+        private System.Windows.Forms.TextBox idCustEditBTN;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel editSupPanel;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button delSupEditBTN;
+        private System.Windows.Forms.Button cekSupEditBTN;
+        private System.Windows.Forms.Button saveSupEditBTN;
+        private System.Windows.Forms.ComboBox genderSupCB;
+        private System.Windows.Forms.TextBox noHPSupEditTB;
+        private System.Windows.Forms.TextBox alamatSupEditTB;
+        private System.Windows.Forms.TextBox namaSupEditTB;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DataGridView cekSupDGV;
+        private System.Windows.Forms.TextBox idSupEditTB;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel lihatSupPanel;
+        private System.Windows.Forms.DataGridView lihatSupDGV;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel regisSupPanel;
+        private System.Windows.Forms.Button batalSupInpBTN;
+        private System.Windows.Forms.Button simpanSupBTN;
+        private System.Windows.Forms.TextBox noHPSupTB;
+        private System.Windows.Forms.TextBox alamatSupInpTB;
+        private System.Windows.Forms.TextBox namaSupInpTB;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox genderSupTB;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem2;
     }
 }
 

@@ -226,5 +226,208 @@ namespace Latihan_POS
         {
               
         }
+
+        private void simpanCusInpBtn_Click(object sender, EventArgs e)
+        {
+            Customer cust = new Customer();
+            cust.setNama(namaCusInpTB.Text);
+            cust.setAlamat(alamatCusInpTB.Text);
+            cust.setNoHp(noHpCusInpTB.Text);
+            cust.setGender(genderBoxInpCB.Text);
+            cust.setCreated_at(DateTime.Now);
+            cust.setUpdated_at(DateTime.Now);
+            MessageBox.Show(cust.insert());
+        }
+
+        private void batalCusInpBtn_Click(object sender, EventArgs e)
+        {
+            namaCusInpTB.Text = "";
+            alamatCusInpTB.Text = "";
+            noHpCusInpTB.Text = "";
+            genderBoxInpCB.Text = "";
+        }
+
+        private void cusomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+            panelLhtCust.Show();
+            panelLhtCust.Dock = DockStyle.Fill;
+            DataSet ds = new DataSet();
+            Customer cus = new Customer();
+            ds = cus.lihat();
+            custListDgv.ReadOnly = true;
+            custListDgv.AllowUserToAddRows = false;
+            custListDgv.AllowUserToDeleteRows = false;
+            custListDgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            custListDgv.DataSource = ds.Tables["customer"];
+        }
+
+        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+            register_user_pnl.Show();
+            register_user_pnl.Dock = DockStyle.Fill;
+        }
+
+        private void cekCustBTN_Click(object sender, EventArgs e)
+        {
+            if (idCustEditBTN.Text!= "")
+            {
+                Customer cus = new Customer();
+                cus.setId(Convert.ToInt32(idCustEditBTN.Text));
+                DataSet ds = cus.lihat();
+
+                cekCustDGV.ReadOnly = true;
+                cekCustDGV.AllowUserToAddRows = false;
+                cekCustDGV.AllowUserToDeleteRows = false;
+                cekCustDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                cekCustDGV.DataSource = ds.Tables["customer"];
+                if (ds.Tables.Count != 0)
+                {
+                    if (ds.Tables["customer"].Rows.Count != 0)
+                    {
+                        namaCustEditTB.Text = Convert.ToString(ds.Tables["customer"].Rows[0]["Nama"]);
+                        alamatCusEditTB.Text = Convert.ToString(ds.Tables["customer"].Rows[0]["Alamat"]);
+                        noHpCusEditTB.Text = Convert.ToString(ds.Tables["customer"].Rows[0]["NoHp"]);
+                        genderCustEditTB.Text = Convert.ToString(ds.Tables["customer"].Rows[0]["Gender"]);
+                    }
+                }
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void simpanEditBTN_Click(object sender, EventArgs e)
+        {
+            Customer cust = new Customer();
+            cust.setId(Convert.ToInt32(idCustEditBTN.Text));
+            cust.setNama(namaCustEditTB.Text);
+            cust.setAlamat(alamatCusEditTB.Text);
+            cust.setUpdated_at(DateTime.Now);
+            cust.setGender(genderCustEditTB.Text);
+            cust.setNoHp(noHpCusEditTB.Text);
+            cust.edit();
+        }
+
+        private void hpsCustBTN_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Anda akan menghapus ini?", "Hapus ?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Customer cus = new Customer();
+                cus.setId(Convert.ToInt32(idCustEditBTN.Text));
+                MessageBox.Show(cus.delete());
+            }
+        }
+
+        private void customerToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+            editCustPanel.Show();
+            editCustPanel.Dock = DockStyle.Fill;
+        }
+
+        private void simpanSupBTN_Click(object sender, EventArgs e)
+        {
+            Supplier sup = new Supplier();
+            sup.setNama(namaSupInpTB.Text);
+            sup.setAlamat(alamatSupInpTB.Text);
+            sup.setNoHp(noHPSupTB.Text);
+            sup.setGender(genderSupTB.Text);
+            sup.setCreated_at(DateTime.Now);
+            sup.setUpdated_at(DateTime.Now);
+            sup.insert();
+        }
+
+        private void batalSupInpBTN_Click(object sender, EventArgs e)
+        {
+            namaSupInpTB.Text = "";
+            alamatSupInpTB.Text = "";
+            noHPSupTB.Text = "";
+            genderSupTB.Text = "";
+        }
+
+        private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+            regisSupPanel.Show();
+            regisSupPanel.Dock = DockStyle.Fill;
+        }
+
+        private void supplierToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+            lihatSupPanel.Show();
+            lihatSupPanel.Dock = DockStyle.Fill;
+            DataSet ds = new DataSet();
+            Supplier sup = new Supplier();
+            ds = sup.lihat();
+            lihatSupDGV.ReadOnly = true;
+            lihatSupDGV.AllowUserToAddRows = false;
+            lihatSupDGV.AllowUserToDeleteRows = false;
+            lihatSupDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            lihatSupDGV.DataSource = ds.Tables["supplier"];
+
+        }
+
+        private void cekSupEditBTN_Click(object sender, EventArgs e)
+        {
+
+            if (idSupEditTB.Text != "")
+            {
+                Supplier sup = new Supplier();
+                sup.setId(Convert.ToInt32(idSupEditTB.Text));
+                DataSet ds = sup.lihat();
+
+                cekSupDGV.ReadOnly = true;
+                cekSupDGV.AllowUserToAddRows = false;
+                cekSupDGV.AllowUserToDeleteRows = false;
+                cekSupDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                cekSupDGV.DataSource = ds.Tables["supplier"];
+                if (ds.Tables.Count != 0)
+                {
+                    if (ds.Tables["supplier"].Rows.Count != 0)
+                    {
+                        namaSupEditTB.Text = Convert.ToString(ds.Tables["supplier"].Rows[0]["Nama"]);
+                        alamatSupEditTB.Text = Convert.ToString(ds.Tables["supplier"].Rows[0]["Alamat"]);
+                        noHPSupEditTB.Text = Convert.ToString(ds.Tables["supplier"].Rows[0]["NoHp"]);
+                        genderSupCB.Text = Convert.ToString(ds.Tables["supplier"].Rows[0]["Gender"]);
+                    }
+                }
+            }
+        }
+
+        private void saveSupEditBTN_Click(object sender, EventArgs e)
+        {
+            Supplier sup = new Supplier();
+            sup.setNama(namaSupEditTB.Text);
+            sup.setId(Convert.ToInt32(idSupEditTB.Text));
+            sup.setAlamat(alamatSupEditTB.Text);
+            sup.setNoHp(noHPSupEditTB.Text);
+            sup.setGender(genderSupCB.Text);
+            sup.edit();
+
+        }
+
+        private void delSupEditBTN_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Anda akan menghapus ini?", "Hapus ?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Supplier sup = new Supplier();
+                sup.setId(Convert.ToInt32(idSupEditTB.Text));
+                MessageBox.Show(sup.delete());
+            }
+        }
+
+        private void supplierToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+            editSupPanel.Show();
+            editSupPanel.Dock = DockStyle.Fill;
+        }
     }
 }

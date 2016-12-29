@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace Latihan_POS
 {
-    class Customer
+    class Supplier
     {
         public int id { private set; get; }
         public string nama { private set; get; }
@@ -23,7 +23,7 @@ namespace Latihan_POS
         public void setUpdated_at(DateTime updated_at) { this.str_updated_at = updated_at.ToString("yyyy-MM-dd HH:mm:ss"); }
         public void setId(int id) { this.id = id; }
         public void setNama(string nama) { this.nama = nama; }
-        public void setAlamat(string alamat){this.alamat=alamat;}
+        public void setAlamat(string alamat) { this.alamat = alamat; }
         public void setNoHp(string nohp) { this.nohp = nohp; }
         public void setGender(string gender) { this.gender = gender; }
 
@@ -32,7 +32,7 @@ namespace Latihan_POS
             Dbconn db = new Dbconn();
             db.initialize_conn();
             MySqlDataAdapter da = new MySqlDataAdapter();
-            string sql = "INSERT INTO customer( Nama, Alamat, NoHP, Gender, Created_at, Updated_at) VALUES(@Nama,@Alamat,@NoHP,@Gender,@Created_at,@Updated_at)";
+            string sql = "INSERT INTO supplier( Nama, Alamat, NoHP, Gender, Created_at, Updated_at) VALUES(@Nama,@Alamat,@NoHP,@Gender,@Created_at,@Updated_at)";
             da.InsertCommand = new MySqlCommand(sql, db.conn);
             da.InsertCommand.Prepare();
             //da.InsertCommand.Parameters.AddWithValue("@ID", this.id);
@@ -43,10 +43,10 @@ namespace Latihan_POS
             da.InsertCommand.Parameters.AddWithValue("@Created_at", this.str_created_at);
             da.InsertCommand.Parameters.AddWithValue("@Updated_at", this.str_updated_at);
             string res;
-            try { res=da.InsertCommand.ExecuteNonQuery().ToString(); }
+            try { res = da.InsertCommand.ExecuteNonQuery().ToString(); }
             catch (MySqlException ex) { return ex.ToString(); }
             db.close_conn();
-            return "Berhasil insert :"+res+"Data";
+            return "Berhasil insert :" + res + "Data";
         }
 
         public DataSet lihat()
@@ -58,17 +58,17 @@ namespace Latihan_POS
             MySqlDataAdapter da = new MySqlDataAdapter();
             if (this.id != 0)
             {
-                string sql = "select * from customer where ID=@id";
+                string sql = "select * from supplier where ID=@id";
                 da.SelectCommand = new MySqlCommand(sql, db.conn);
                 da.SelectCommand.Prepare();
                 da.SelectCommand.Parameters.AddWithValue("@id", this.id);
             }
             else
             {
-                string sql = "select * from customer";
+                string sql = "select * from supplier";
                 da.SelectCommand = new MySqlCommand(sql, db.conn);
             }
-            da.Fill(ds, "customer");
+            da.Fill(ds, "supplier");
             da.Dispose();
             db.close_conn();
             return ds;
@@ -77,7 +77,7 @@ namespace Latihan_POS
         public string edit()
         {
             Dbconn db = new Dbconn();
-            string sql = "update customer set nama=@Nama,Alamat=@Alamat,NoHP=@NoHP,Gender=@Gender,Updated_at=@s_dateUpdated where ID=@ID";
+            string sql = "update supplier set nama=@Nama,Alamat=@Alamat,NoHP=@NoHP,Gender=@Gender,Updated_at=@s_dateUpdated where ID=@ID";
             MySqlDataAdapter da = new MySqlDataAdapter();
             db.initialize_conn();
             da.UpdateCommand = new MySqlCommand(sql, db.conn);
@@ -105,7 +105,7 @@ namespace Latihan_POS
         public string delete()
         {
             Dbconn db = new Dbconn();
-            string sql = "delete from customer where ID=@id";
+            string sql = "delete from supplier where ID=@id";
             MySqlDataAdapter da = new MySqlDataAdapter();
             db.initialize_conn();
             da.DeleteCommand = new MySqlCommand(sql, db.conn);
