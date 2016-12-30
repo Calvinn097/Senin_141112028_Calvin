@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2016 at 06:05 PM
+-- Generation Time: Dec 30, 2016 at 05:32 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -50,6 +50,47 @@ INSERT INTO `barang` (`ID`, `Kode`, `Nama`, `JumlahAwal`, `HargaHPP`, `HargaJual
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `buy`
+--
+
+CREATE TABLE IF NOT EXISTS `buy` (
+  `id_pembelian` int(11) NOT NULL,
+  `supplier_id` int(11) NOT NULL,
+  `tanggal` datetime NOT NULL,
+  `total_price` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `buy`
+--
+
+INSERT INTO `buy` (`id_pembelian`, `supplier_id`, `tanggal`, `total_price`) VALUES
+(3, 1, '2016-12-30 23:03:35', 8250000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buy_item`
+--
+
+CREATE TABLE IF NOT EXISTS `buy_item` (
+  `buy_item_id` int(11) NOT NULL,
+  `id_buy` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `qty` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `buy_item`
+--
+
+INSERT INTO `buy_item` (`buy_item_id`, `id_buy`, `id_barang`, `qty`) VALUES
+(3, 3, 1, 6),
+(4, 3, 2, 9);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customer`
 --
 
@@ -69,6 +110,47 @@ CREATE TABLE IF NOT EXISTS `customer` (
 
 INSERT INTO `customer` (`ID`, `Nama`, `Alamat`, `NoHp`, `Gender`, `Created_at`, `Updated_at`) VALUES
 (1, 'Calvin', 'Angin', '081265105761', 'Laki-Laki', '2016-12-29 21:38:12', '2016-12-29 21:42:16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sell`
+--
+
+CREATE TABLE IF NOT EXISTS `sell` (
+  `id_penjualan` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `tanggal` datetime NOT NULL,
+  `total_price` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sell`
+--
+
+INSERT INTO `sell` (`id_penjualan`, `customer_id`, `tanggal`, `total_price`) VALUES
+(1, 1, '2016-12-30 23:29:03', 8800000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sell_item`
+--
+
+CREATE TABLE IF NOT EXISTS `sell_item` (
+  `sell_item_id` int(11) NOT NULL,
+  `id_sell` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `qty` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sell_item`
+--
+
+INSERT INTO `sell_item` (`sell_item_id`, `id_sell`, `id_barang`, `qty`) VALUES
+(1, 1, 1, 12),
+(2, 1, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -131,10 +213,34 @@ ALTER TABLE `barang`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `buy`
+--
+ALTER TABLE `buy`
+  ADD PRIMARY KEY (`id_pembelian`);
+
+--
+-- Indexes for table `buy_item`
+--
+ALTER TABLE `buy_item`
+  ADD PRIMARY KEY (`buy_item_id`);
+
+--
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `sell`
+--
+ALTER TABLE `sell`
+  ADD PRIMARY KEY (`id_penjualan`);
+
+--
+-- Indexes for table `sell_item`
+--
+ALTER TABLE `sell_item`
+  ADD PRIMARY KEY (`sell_item_id`);
 
 --
 -- Indexes for table `staff`
@@ -158,10 +264,30 @@ ALTER TABLE `supplier`
 ALTER TABLE `barang`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `buy`
+--
+ALTER TABLE `buy`
+  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `buy_item`
+--
+ALTER TABLE `buy_item`
+  MODIFY `buy_item_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `sell`
+--
+ALTER TABLE `sell`
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `sell_item`
+--
+ALTER TABLE `sell_item`
+  MODIFY `sell_item_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `staff`
 --

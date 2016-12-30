@@ -15,9 +15,11 @@ namespace Latihan_POS
     {
         static int last_id;
         static Transaksi beli;
+        static Transaksi jual;
         public Form1()
         {
             beli = new Transaksi();
+            jual = new Transaksi();
             InitializeComponent();
         }
 
@@ -470,14 +472,7 @@ namespace Latihan_POS
         {
             hidePanel();
             pembelian_pnl.Show();
-            this.keranjangBeli.DataSource = null;
-            this.keranjangBeli.Rows.Clear();
-            this.keranjangBeli.Columns.Clear();
-            this.keranjangBeli.Columns.Add("idBrg", "ID Barang");
-            this.keranjangBeli.Columns.Add("namaBrg", "Nama");
-            this.keranjangBeli.Columns.Add("qtyBrg", "Qty");
-            this.keranjangBeli.Columns.Add("hargaPcs", "@harga");
-            this.keranjangBeli.Columns.Add("hargaTot", "Harga Total");
+            pembelian_pnl.Dock = DockStyle.Fill;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -548,6 +543,118 @@ namespace Latihan_POS
         private void checkoutPembelian_Click(object sender, EventArgs e)
         {
             MessageBox.Show(beli.beli(Convert.ToInt32(suppIDBeliBrgTB.Text)));
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Latihan_POS.Transaksi.brg brg = new Latihan_POS.Transaksi.brg();
+            List<Latihan_POS.Transaksi.brg> listBrg = new List<Transaksi.brg>();
+
+            listBrg = jual.add_barang(Convert.ToInt32(idBrgJualTB.Text), Convert.ToInt32(qtyBrgJualTB.Text));
+            Barang clsBrg = new Barang();
+            DataSet ds = new DataSet();
+
+            this.JualCart.DataSource = null;
+            this.JualCart.Rows.Clear();
+            this.JualCart.Columns.Clear();
+            this.JualCart.Columns.Add("idBrg", "ID Barang");
+            this.JualCart.Columns.Add("namaBrg", "Nama");
+            this.JualCart.Columns.Add("qtyBrg", "Qty");
+            this.JualCart.Columns.Add("hargaPcs", "@harga");
+            this.JualCart.Columns.Add("hargaTot", "Harga Total");
+            for (int i = 0; i < listBrg.Count; i++)
+            {
+                clsBrg.setId(listBrg[i].id);
+                ds = clsBrg.lihat();
+                //ds.Tables["supplier"].Rows[0]["Gender"];
+                foreach (DataRow row in ds.Tables["barang"].Rows)
+                {
+                    this.JualCart.Rows.Add(row["ID"].ToString(),
+                            row["Nama"].ToString(),
+                            listBrg[i].qty,
+                            row["HargaJual"].ToString(),
+                            (Convert.ToInt32(row["HargaJual"]) * Convert.ToInt32(listBrg[i].qty)).ToString()
+                        );
+                }
+
+            }
+        }
+
+        private void minSell_Click(object sender, EventArgs e)
+        {
+            //Latihan_POS.Transaksi.brg brg = new Latihan_POS.Transaksi.brg();
+            List<Latihan_POS.Transaksi.brg> listBrg = new List<Transaksi.brg>();
+            listBrg = jual.min_barang(Convert.ToInt32(idBrgJualTB.Text), Convert.ToInt32(qtyBrgJualTB.Text));
+            Barang clsBrg = new Barang();
+            DataSet ds = new DataSet();
+            this.JualCart.DataSource = null;
+            this.JualCart.Rows.Clear();
+            this.JualCart.Columns.Clear();
+            this.JualCart.Columns.Add("idBrg", "ID Barang");
+            this.JualCart.Columns.Add("namaBrg", "Nama");
+            this.JualCart.Columns.Add("qtyBrg", "Qty");
+            this.JualCart.Columns.Add("hargaPcs", "@harga");
+            this.JualCart.Columns.Add("hargaTot", "Harga Total");
+            for (int i = 0; i < listBrg.Count; i++)
+            {
+                clsBrg.setId(listBrg[i].id);
+                ds = clsBrg.lihat();
+                //ds.Tables["supplier"].Rows[0]["Gender"];
+                foreach (DataRow row in ds.Tables["barang"].Rows)
+                {
+                    this.JualCart.Rows.Add(row["ID"].ToString(),
+                            row["Nama"].ToString(),
+                            listBrg[i].qty,
+                            row["HargaJual"].ToString(),
+                            (Convert.ToInt32(row["HargaJual"]) * Convert.ToInt32(listBrg[i].qty)).ToString()
+                        );
+                }
+
+            }
+        }
+
+        private void delSell_Click(object sender, EventArgs e)
+        {
+            List<Latihan_POS.Transaksi.brg> listBrg = new List<Transaksi.brg>();
+            listBrg = jual.remove(Convert.ToInt32(idBrgJualTB.Text));
+            Barang clsBrg = new Barang();
+            DataSet ds = new DataSet();
+            this.JualCart.DataSource = null;
+            this.JualCart.Rows.Clear();
+            this.JualCart.Columns.Clear();
+            this.JualCart.Columns.Add("idBrg", "ID Barang");
+            this.JualCart.Columns.Add("namaBrg", "Nama");
+            this.JualCart.Columns.Add("qtyBrg", "Qty");
+            this.JualCart.Columns.Add("hargaPcs", "@harga");
+            this.JualCart.Columns.Add("hargaTot", "Harga Total");
+            for (int i = 0; i < listBrg.Count; i++)
+            {
+                clsBrg.setId(listBrg[i].id);
+                ds = clsBrg.lihat();
+                //ds.Tables["supplier"].Rows[0]["Gender"];
+                foreach (DataRow row in ds.Tables["barang"].Rows)
+                {
+                    this.JualCart.Rows.Add(row["ID"].ToString(),
+                            row["Nama"].ToString(),
+                            listBrg[i].qty,
+                            row["HargaJual"].ToString(),
+                            (Convert.ToInt32(row["HargaJual"]) * Convert.ToInt32(listBrg[i].qty)).ToString()
+                        );
+                }
+
+            }
+        }
+
+        private void checkoutCust_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(jual.jual(Convert.ToInt32(custIDJualTB.Text)));
+        }
+
+        private void penjualanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+            panel1.Show();
+            panel1.Dock = DockStyle.Fill;
         }
     }
 }

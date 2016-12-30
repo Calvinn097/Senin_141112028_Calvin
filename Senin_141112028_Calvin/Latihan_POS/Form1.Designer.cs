@@ -158,6 +158,20 @@
             this.krgBrgBeliBTN = new System.Windows.Forms.Button();
             this.HpsBrgBeliBTN = new System.Windows.Forms.Button();
             this.suppIDBeliBrgTB = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.custIDJualTB = new System.Windows.Forms.TextBox();
+            this.delSell = new System.Windows.Forms.Button();
+            this.minSell = new System.Windows.Forms.Button();
+            this.checkoutCust = new System.Windows.Forms.Button();
+            this.addSell = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.qtyBrgJualTB = new System.Windows.Forms.TextBox();
+            this.idBrgJualTB = new System.Windows.Forms.TextBox();
+            this.JualCart = new System.Windows.Forms.DataGridView();
+            this.label38 = new System.Windows.Forms.Label();
+            this.penjualanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel_register_barang.SuspendLayout();
             this.panel_lht_brg.SuspendLayout();
@@ -176,6 +190,8 @@
             this.regisSupPanel.SuspendLayout();
             this.pembelian_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keranjangBeli)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.JualCart)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -184,7 +200,8 @@
             this.registrasiToolStripMenuItem,
             this.lihatToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.pembelianToolStripMenuItem});
+            this.pembelianToolStripMenuItem,
+            this.penjualanToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(872, 24);
@@ -1277,11 +1294,11 @@
             this.pembelian_pnl.Controls.Add(this.idBrgPembelian);
             this.pembelian_pnl.Controls.Add(this.keranjangBeli);
             this.pembelian_pnl.Controls.Add(this.label31);
-            this.pembelian_pnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pembelian_pnl.Location = new System.Drawing.Point(0, 24);
+            this.pembelian_pnl.Location = new System.Drawing.Point(30, 266);
             this.pembelian_pnl.Name = "pembelian_pnl";
-            this.pembelian_pnl.Size = new System.Drawing.Size(872, 499);
+            this.pembelian_pnl.Size = new System.Drawing.Size(200, 100);
             this.pembelian_pnl.TabIndex = 24;
+            this.pembelian_pnl.Visible = false;
             // 
             // label31
             // 
@@ -1395,11 +1412,143 @@
             this.suppIDBeliBrgTB.Size = new System.Drawing.Size(100, 20);
             this.suppIDBeliBrgTB.TabIndex = 12;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.custIDJualTB);
+            this.panel1.Controls.Add(this.delSell);
+            this.panel1.Controls.Add(this.minSell);
+            this.panel1.Controls.Add(this.checkoutCust);
+            this.panel1.Controls.Add(this.addSell);
+            this.panel1.Controls.Add(this.label35);
+            this.panel1.Controls.Add(this.label36);
+            this.panel1.Controls.Add(this.label37);
+            this.panel1.Controls.Add(this.qtyBrgJualTB);
+            this.panel1.Controls.Add(this.idBrgJualTB);
+            this.panel1.Controls.Add(this.JualCart);
+            this.panel1.Controls.Add(this.label38);
+            this.panel1.Location = new System.Drawing.Point(315, 260);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 25;
+            // 
+            // custIDJualTB
+            // 
+            this.custIDJualTB.Location = new System.Drawing.Point(133, 197);
+            this.custIDJualTB.Name = "custIDJualTB";
+            this.custIDJualTB.Size = new System.Drawing.Size(100, 20);
+            this.custIDJualTB.TabIndex = 24;
+            // 
+            // delSell
+            // 
+            this.delSell.Location = new System.Drawing.Point(133, 266);
+            this.delSell.Name = "delSell";
+            this.delSell.Size = new System.Drawing.Size(121, 23);
+            this.delSell.TabIndex = 23;
+            this.delSell.Text = "Hps dr Keranjang";
+            this.delSell.UseVisualStyleBackColor = true;
+            this.delSell.Click += new System.EventHandler(this.delSell_Click);
+            // 
+            // minSell
+            // 
+            this.minSell.Location = new System.Drawing.Point(133, 242);
+            this.minSell.Name = "minSell";
+            this.minSell.Size = new System.Drawing.Size(121, 23);
+            this.minSell.TabIndex = 22;
+            this.minSell.Text = "Krg dr Keranjang";
+            this.minSell.UseVisualStyleBackColor = true;
+            this.minSell.Click += new System.EventHandler(this.minSell_Click);
+            // 
+            // checkoutCust
+            // 
+            this.checkoutCust.Location = new System.Drawing.Point(730, 243);
+            this.checkoutCust.Name = "checkoutCust";
+            this.checkoutCust.Size = new System.Drawing.Size(75, 23);
+            this.checkoutCust.TabIndex = 21;
+            this.checkoutCust.Text = "Selesai";
+            this.checkoutCust.UseVisualStyleBackColor = true;
+            this.checkoutCust.Click += new System.EventHandler(this.checkoutCust_Click);
+            // 
+            // addSell
+            // 
+            this.addSell.Location = new System.Drawing.Point(133, 222);
+            this.addSell.Name = "addSell";
+            this.addSell.Size = new System.Drawing.Size(122, 23);
+            this.addSell.TabIndex = 20;
+            this.addSell.Text = "Tbh ke Keranjang";
+            this.addSell.UseVisualStyleBackColor = true;
+            this.addSell.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(53, 200);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(65, 13);
+            this.label35.TabIndex = 19;
+            this.label35.Text = "Customer ID";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(53, 168);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(23, 13);
+            this.label36.TabIndex = 18;
+            this.label36.Text = "Qty";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(53, 132);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(55, 13);
+            this.label37.TabIndex = 17;
+            this.label37.Text = "ID Barang";
+            // 
+            // qtyBrgJualTB
+            // 
+            this.qtyBrgJualTB.Location = new System.Drawing.Point(132, 165);
+            this.qtyBrgJualTB.Name = "qtyBrgJualTB";
+            this.qtyBrgJualTB.Size = new System.Drawing.Size(100, 20);
+            this.qtyBrgJualTB.TabIndex = 16;
+            // 
+            // idBrgJualTB
+            // 
+            this.idBrgJualTB.Location = new System.Drawing.Point(133, 129);
+            this.idBrgJualTB.Name = "idBrgJualTB";
+            this.idBrgJualTB.Size = new System.Drawing.Size(100, 20);
+            this.idBrgJualTB.TabIndex = 15;
+            // 
+            // JualCart
+            // 
+            this.JualCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.JualCart.Location = new System.Drawing.Point(35, 306);
+            this.JualCart.Name = "JualCart";
+            this.JualCart.Size = new System.Drawing.Size(805, 150);
+            this.JualCart.TabIndex = 14;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(32, 42);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(54, 13);
+            this.label38.TabIndex = 13;
+            this.label38.Text = "Penjualan";
+            // 
+            // penjualanToolStripMenuItem
+            // 
+            this.penjualanToolStripMenuItem.Name = "penjualanToolStripMenuItem";
+            this.penjualanToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.penjualanToolStripMenuItem.Text = "Penjualan";
+            this.penjualanToolStripMenuItem.Click += new System.EventHandler(this.penjualanToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 523);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pembelian_pnl);
             this.Controls.Add(this.editSupPanel);
             this.Controls.Add(this.lihatSupPanel);
@@ -1444,6 +1593,9 @@
             this.pembelian_pnl.ResumeLayout(false);
             this.pembelian_pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keranjangBeli)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.JualCart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1581,6 +1733,20 @@
         private System.Windows.Forms.Button krgBrgBeliBTN;
         private System.Windows.Forms.Button HpsBrgBeliBTN;
         private System.Windows.Forms.TextBox suppIDBeliBrgTB;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox custIDJualTB;
+        private System.Windows.Forms.Button delSell;
+        private System.Windows.Forms.Button minSell;
+        private System.Windows.Forms.Button checkoutCust;
+        private System.Windows.Forms.Button addSell;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox qtyBrgJualTB;
+        private System.Windows.Forms.TextBox idBrgJualTB;
+        private System.Windows.Forms.DataGridView JualCart;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.ToolStripMenuItem penjualanToolStripMenuItem;
     }
 }
 

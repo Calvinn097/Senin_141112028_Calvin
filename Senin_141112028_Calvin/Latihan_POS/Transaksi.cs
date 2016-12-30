@@ -12,6 +12,7 @@ namespace Latihan_POS
     {
 
         public int supplierID { set; get; }
+        public int customerID { set; get; }
         public string tanggal { set; get; }
         public int totalPrice { set; get; }
         public struct brg
@@ -112,7 +113,46 @@ namespace Latihan_POS
                 try { da.InsertCommand.ExecuteNonQuery().ToString(); }
                 catch (MySqlException ex) { return ex.ToString(); }
             }
-            sql = "update customer set total_price=@tot where id_pembelian="+id_buy.ToString();
+            sql = "update buy set total_price=@tot where id_pembelian="+id_buy.ToString();
+            da.UpdateCommand = new MySqlCommand(sql, db.conn);
+            this.totalPrice = priceTot;
+            da.UpdateCommand.Parameters.AddWithValue("@tot", this.totalPrice);
+            da.UpdateCommand.ExecuteNonQuery();
+            db.close_conn();
+            return "success";
+        }
+
+        public string jual(int customerID)
+        {
+            int priceTot = 0;
+            this.customerID = customerID;
+            this.tanggal = (DateTime.Now).ToString("yyyy-MM-dd HH:mm:ss");
+            Barang barang = new Barang();
+            Dbconn db = new Dbconn();
+            db.initialize_conn();
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            string sql = "INSERT INTO sell(customer_id,tanggal) VALUES(@customer_id,@tanggal)";
+            da.InsertCommand = new MySqlCommand(sql, db.conn);
+            da.InsertCommand.Prepare();
+            da.InsertCommand.Parameters.AddWithValue("@customer_id", this.customerID);
+            da.InsertCommand.Parameters.AddWithValue("@tanggal", this.tanggal);
+            da.InsertCommand.ExecuteNonQuery();
+            int id_sell = Convert.ToInt32(da.InsertCommand.LastInsertedId);
+            sql = "INSERT INTO sell_item( id_sell, id_barang,qty) VALUES(@idSell,@idBarang,@qty)";
+
+            for (int i = 0; i < cart.Count; i++)
+            {
+                da.InsertCommand = new MySqlCommand(sql, db.conn);
+                da.InsertCommand.Prepare();
+                //da.InsertCommand.Parameters.AddWithValue("@ID", this.id);
+                da.InsertCommand.Parameters.AddWithValue("@idSell", id_sell);
+                da.InsertCommand.Parameters.AddWithValue("@idBarang", cart[i].id);
+                da.InsertCommand.Parameters.AddWithValue("@qty", cart[i].qty);
+                priceTot += barang.getPriceSell(cart[i].id) * cart[i].qty;
+                try { da.InsertCommand.ExecuteNonQuery().ToString(); }
+                catch (MySqlException ex) { return ex.ToString(); }
+            }
+            sql = "update sell set total_price=@tot where id_penjualan=" + id_sell.ToString();
             da.UpdateCommand = new MySqlCommand(sql, db.conn);
             this.totalPrice = priceTot;
             da.UpdateCommand.Parameters.AddWithValue("@tot", this.totalPrice);
