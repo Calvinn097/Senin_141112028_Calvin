@@ -14,8 +14,10 @@ namespace Latihan_POS
     public partial class Form1 : Form
     {
         static int last_id;
+        static Transaksi beli;
         public Form1()
         {
+            beli = new Transaksi();
             InitializeComponent();
         }
 
@@ -428,6 +430,124 @@ namespace Latihan_POS
             hidePanel();
             editSupPanel.Show();
             editSupPanel.Dock = DockStyle.Fill;
+        }
+
+        private void addListPembelian_Click(object sender, EventArgs e)
+        {
+            
+            //Latihan_POS.Transaksi.brg brg = new Latihan_POS.Transaksi.brg();
+            List<Latihan_POS.Transaksi.brg> listBrg = new List<Transaksi.brg>();
+            listBrg = beli.add_barang(Convert.ToInt32(idBrgPembelian.Text), Convert.ToInt32(qtyBrgPembelian.Text));
+            Barang clsBrg = new Barang();
+            DataSet ds=new DataSet();
+            this.keranjangBeli.DataSource = null;
+            this.keranjangBeli.Rows.Clear();
+            this.keranjangBeli.Columns.Clear();
+            this.keranjangBeli.Columns.Add("idBrg", "ID Barang");
+            this.keranjangBeli.Columns.Add("namaBrg", "Nama");
+            this.keranjangBeli.Columns.Add("qtyBrg", "Qty");
+            this.keranjangBeli.Columns.Add("hargaPcs", "@harga");
+            this.keranjangBeli.Columns.Add("hargaTot", "Harga Total");
+            for(int i=0;i<listBrg.Count;i++){
+                clsBrg.setId(listBrg[i].id);
+                ds=clsBrg.lihat();
+                //ds.Tables["supplier"].Rows[0]["Gender"];
+                foreach(DataRow row in ds.Tables["barang"].Rows){
+                    this.keranjangBeli.Rows.Add(row["ID"].ToString(),
+                            row["Nama"].ToString(),
+                            listBrg[i].qty,
+                            row["HargaHPP"].ToString(),
+                            (Convert.ToInt32(row["HargaHPP"])*Convert.ToInt32(listBrg[i].qty)).ToString()
+                        );
+                }
+
+            }
+            //this.keranjangBeli.Columns.Add("test", "test2");
+            //this.keranjangBeli.Rows.Add("HelloHelloo","hllo2");
+        }
+
+        private void pembelianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+            pembelian_pnl.Show();
+            this.keranjangBeli.DataSource = null;
+            this.keranjangBeli.Rows.Clear();
+            this.keranjangBeli.Columns.Clear();
+            this.keranjangBeli.Columns.Add("idBrg", "ID Barang");
+            this.keranjangBeli.Columns.Add("namaBrg", "Nama");
+            this.keranjangBeli.Columns.Add("qtyBrg", "Qty");
+            this.keranjangBeli.Columns.Add("hargaPcs", "@harga");
+            this.keranjangBeli.Columns.Add("hargaTot", "Harga Total");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //Latihan_POS.Transaksi.brg brg = new Latihan_POS.Transaksi.brg();
+            List<Latihan_POS.Transaksi.brg> listBrg = new List<Transaksi.brg>();
+            listBrg = beli.min_barang(Convert.ToInt32(idBrgPembelian.Text), Convert.ToInt32(qtyBrgPembelian.Text));
+            Barang clsBrg = new Barang();
+            DataSet ds = new DataSet();
+            this.keranjangBeli.DataSource = null;
+            this.keranjangBeli.Rows.Clear();
+            this.keranjangBeli.Columns.Clear();
+            this.keranjangBeli.Columns.Add("idBrg", "ID Barang");
+            this.keranjangBeli.Columns.Add("namaBrg", "Nama");
+            this.keranjangBeli.Columns.Add("qtyBrg", "Qty");
+            this.keranjangBeli.Columns.Add("hargaPcs", "@harga");
+            this.keranjangBeli.Columns.Add("hargaTot", "Harga Total");
+            for (int i = 0; i < listBrg.Count; i++)
+            {
+                clsBrg.setId(listBrg[i].id);
+                ds = clsBrg.lihat();
+                //ds.Tables["supplier"].Rows[0]["Gender"];
+                foreach (DataRow row in ds.Tables["barang"].Rows)
+                {
+                    this.keranjangBeli.Rows.Add(row["ID"].ToString(),
+                            row["Nama"].ToString(),
+                            listBrg[i].qty,
+                            row["HargaHPP"].ToString(),
+                            (Convert.ToInt32(row["HargaHPP"]) * Convert.ToInt32(listBrg[i].qty)).ToString()
+                        );
+                }
+
+            }
+        }
+
+        private void HpsBrgBeliBTN_Click(object sender, EventArgs e)
+        {
+            List<Latihan_POS.Transaksi.brg> listBrg = new List<Transaksi.brg>();
+            listBrg = beli.remove(Convert.ToInt32(idBrgPembelian.Text));
+            Barang clsBrg = new Barang();
+            DataSet ds = new DataSet();
+            this.keranjangBeli.DataSource = null;
+            this.keranjangBeli.Rows.Clear();
+            this.keranjangBeli.Columns.Clear();
+            this.keranjangBeli.Columns.Add("idBrg", "ID Barang");
+            this.keranjangBeli.Columns.Add("namaBrg", "Nama");
+            this.keranjangBeli.Columns.Add("qtyBrg", "Qty");
+            this.keranjangBeli.Columns.Add("hargaPcs", "@harga");
+            this.keranjangBeli.Columns.Add("hargaTot", "Harga Total");
+            for (int i = 0; i < listBrg.Count; i++)
+            {
+                clsBrg.setId(listBrg[i].id);
+                ds = clsBrg.lihat();
+                //ds.Tables["supplier"].Rows[0]["Gender"];
+                foreach (DataRow row in ds.Tables["barang"].Rows)
+                {
+                    this.keranjangBeli.Rows.Add(row["ID"].ToString(),
+                            row["Nama"].ToString(),
+                            listBrg[i].qty,
+                            row["HargaHPP"].ToString(),
+                            (Convert.ToInt32(row["HargaHPP"]) * Convert.ToInt32(listBrg[i].qty)).ToString()
+                        );
+                }
+
+            }
+        }
+
+        private void checkoutPembelian_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(beli.beli(Convert.ToInt32(suppIDBeliBrgTB.Text)));
         }
     }
 }

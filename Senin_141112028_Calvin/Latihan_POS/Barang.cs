@@ -78,6 +78,15 @@ namespace Latihan_POS
             return ds;
         }
 
+        public int getPrice(int id)
+        {
+            this.id = id;
+            DataSet ds = new DataSet();
+            ds = this.lihat();
+            int price=Convert.ToInt32(ds.Tables["barang"].Rows[0]["HargaHPP"]);
+            return price;
+        }
+
         public string edit()
         {
             Dbconn db = new Dbconn();

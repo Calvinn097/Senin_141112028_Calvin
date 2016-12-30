@@ -31,14 +31,18 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrasiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.keluarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lihatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barangToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cusomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barangToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_register_barang = new System.Windows.Forms.Panel();
             this.jumlah_reg_brg_label = new System.Windows.Forms.Label();
             this.jumlah_reg_tb = new System.Windows.Forms.TextBox();
@@ -93,6 +97,7 @@
             this.custListDgv = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.editCustPanel = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
             this.hpsCustBTN = new System.Windows.Forms.Button();
             this.cekCustBTN = new System.Windows.Forms.Button();
             this.simpanEditBTN = new System.Windows.Forms.Button();
@@ -107,8 +112,6 @@
             this.cekCustDGV = new System.Windows.Forms.DataGridView();
             this.idCustEditBTN = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.customerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label17 = new System.Windows.Forms.Label();
             this.editSupPanel = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.delSupEditBTN = new System.Windows.Forms.Button();
@@ -141,9 +144,20 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.supplierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.supplierToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pembelian_pnl = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.keranjangBeli = new System.Windows.Forms.DataGridView();
+            this.idBrgPembelian = new System.Windows.Forms.TextBox();
+            this.qtyBrgPembelian = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.addListPembelian = new System.Windows.Forms.Button();
+            this.checkoutPembelian = new System.Windows.Forms.Button();
+            this.pembelianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.krgBrgBeliBTN = new System.Windows.Forms.Button();
+            this.HpsBrgBeliBTN = new System.Windows.Forms.Button();
+            this.suppIDBeliBrgTB = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel_register_barang.SuspendLayout();
             this.panel_lht_brg.SuspendLayout();
@@ -160,6 +174,8 @@
             this.lihatSupPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lihatSupDGV)).BeginInit();
             this.regisSupPanel.SuspendLayout();
+            this.pembelian_pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.keranjangBeli)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -167,7 +183,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrasiToolStripMenuItem,
             this.lihatToolStripMenuItem,
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.pembelianToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(872, 24);
@@ -190,26 +207,33 @@
             // barangToolStripMenuItem
             // 
             this.barangToolStripMenuItem.Name = "barangToolStripMenuItem";
-            this.barangToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.barangToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.barangToolStripMenuItem.Text = "Barang";
             this.barangToolStripMenuItem.Click += new System.EventHandler(this.barangToolStripMenuItem_Click);
+            // 
+            // supplierToolStripMenuItem
+            // 
+            this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
+            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.supplierToolStripMenuItem.Text = "Supplier";
+            this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
             // 
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.customerToolStripMenuItem.Text = "Customer";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(123, 6);
             // 
             // keluarToolStripMenuItem
             // 
             this.keluarToolStripMenuItem.Name = "keluarToolStripMenuItem";
-            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.keluarToolStripMenuItem.Text = "Keluar";
             this.keluarToolStripMenuItem.Click += new System.EventHandler(this.keluarToolStripMenuItem_Click);
             // 
@@ -226,16 +250,23 @@
             // barangToolStripMenuItem1
             // 
             this.barangToolStripMenuItem1.Name = "barangToolStripMenuItem1";
-            this.barangToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.barangToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.barangToolStripMenuItem1.Text = "Barang";
             this.barangToolStripMenuItem1.Click += new System.EventHandler(this.barangToolStripMenuItem1_Click);
             // 
             // cusomerToolStripMenuItem
             // 
             this.cusomerToolStripMenuItem.Name = "cusomerToolStripMenuItem";
-            this.cusomerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cusomerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.cusomerToolStripMenuItem.Text = "Customer";
             this.cusomerToolStripMenuItem.Click += new System.EventHandler(this.cusomerToolStripMenuItem_Click);
+            // 
+            // supplierToolStripMenuItem1
+            // 
+            this.supplierToolStripMenuItem1.Name = "supplierToolStripMenuItem1";
+            this.supplierToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.supplierToolStripMenuItem1.Text = "Supplier";
+            this.supplierToolStripMenuItem1.Click += new System.EventHandler(this.supplierToolStripMenuItem1_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -250,9 +281,23 @@
             // barangToolStripMenuItem2
             // 
             this.barangToolStripMenuItem2.Name = "barangToolStripMenuItem2";
-            this.barangToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.barangToolStripMenuItem2.Size = new System.Drawing.Size(126, 22);
             this.barangToolStripMenuItem2.Text = "Barang";
             this.barangToolStripMenuItem2.Click += new System.EventHandler(this.barangToolStripMenuItem2_Click);
+            // 
+            // customerToolStripMenuItem1
+            // 
+            this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.customerToolStripMenuItem1.Text = "Customer";
+            this.customerToolStripMenuItem1.Click += new System.EventHandler(this.customerToolStripMenuItem1_Click);
+            // 
+            // supplierToolStripMenuItem2
+            // 
+            this.supplierToolStripMenuItem2.Name = "supplierToolStripMenuItem2";
+            this.supplierToolStripMenuItem2.Size = new System.Drawing.Size(126, 22);
+            this.supplierToolStripMenuItem2.Text = "Supplier";
+            this.supplierToolStripMenuItem2.Click += new System.EventHandler(this.supplierToolStripMenuItem2_Click);
             // 
             // panel_register_barang
             // 
@@ -780,6 +825,15 @@
             this.editCustPanel.TabIndex = 20;
             this.editCustPanel.Visible = false;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(25, 24);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(72, 13);
+            this.label17.TabIndex = 13;
+            this.label17.Text = "Edit Customer";
+            // 
             // hpsCustBTN
             // 
             this.hpsCustBTN.Location = new System.Drawing.Point(372, 276);
@@ -902,22 +956,6 @@
             this.label12.Size = new System.Drawing.Size(65, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "ID Customer";
-            // 
-            // customerToolStripMenuItem1
-            // 
-            this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.customerToolStripMenuItem1.Text = "Customer";
-            this.customerToolStripMenuItem1.Click += new System.EventHandler(this.customerToolStripMenuItem1_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(25, 24);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 13);
-            this.label17.TabIndex = 13;
-            this.label17.Text = "Edit Customer";
             // 
             // editSupPanel
             // 
@@ -1225,32 +1263,144 @@
             this.label30.Size = new System.Drawing.Size(0, 13);
             this.label30.TabIndex = 0;
             // 
-            // supplierToolStripMenuItem
+            // pembelian_pnl
             // 
-            this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.supplierToolStripMenuItem.Text = "Supplier";
-            this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
+            this.pembelian_pnl.Controls.Add(this.suppIDBeliBrgTB);
+            this.pembelian_pnl.Controls.Add(this.HpsBrgBeliBTN);
+            this.pembelian_pnl.Controls.Add(this.krgBrgBeliBTN);
+            this.pembelian_pnl.Controls.Add(this.checkoutPembelian);
+            this.pembelian_pnl.Controls.Add(this.addListPembelian);
+            this.pembelian_pnl.Controls.Add(this.label34);
+            this.pembelian_pnl.Controls.Add(this.label33);
+            this.pembelian_pnl.Controls.Add(this.label32);
+            this.pembelian_pnl.Controls.Add(this.qtyBrgPembelian);
+            this.pembelian_pnl.Controls.Add(this.idBrgPembelian);
+            this.pembelian_pnl.Controls.Add(this.keranjangBeli);
+            this.pembelian_pnl.Controls.Add(this.label31);
+            this.pembelian_pnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pembelian_pnl.Location = new System.Drawing.Point(0, 24);
+            this.pembelian_pnl.Name = "pembelian_pnl";
+            this.pembelian_pnl.Size = new System.Drawing.Size(872, 499);
+            this.pembelian_pnl.TabIndex = 24;
             // 
-            // supplierToolStripMenuItem1
+            // label31
             // 
-            this.supplierToolStripMenuItem1.Name = "supplierToolStripMenuItem1";
-            this.supplierToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.supplierToolStripMenuItem1.Text = "Supplier";
-            this.supplierToolStripMenuItem1.Click += new System.EventHandler(this.supplierToolStripMenuItem1_Click);
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(26, 22);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(56, 13);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "Pembelian";
             // 
-            // supplierToolStripMenuItem2
+            // keranjangBeli
             // 
-            this.supplierToolStripMenuItem2.Name = "supplierToolStripMenuItem2";
-            this.supplierToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.supplierToolStripMenuItem2.Text = "Supplier";
-            this.supplierToolStripMenuItem2.Click += new System.EventHandler(this.supplierToolStripMenuItem2_Click);
+            this.keranjangBeli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.keranjangBeli.Location = new System.Drawing.Point(29, 286);
+            this.keranjangBeli.Name = "keranjangBeli";
+            this.keranjangBeli.Size = new System.Drawing.Size(805, 150);
+            this.keranjangBeli.TabIndex = 1;
+            // 
+            // idBrgPembelian
+            // 
+            this.idBrgPembelian.Location = new System.Drawing.Point(127, 109);
+            this.idBrgPembelian.Name = "idBrgPembelian";
+            this.idBrgPembelian.Size = new System.Drawing.Size(100, 20);
+            this.idBrgPembelian.TabIndex = 2;
+            // 
+            // qtyBrgPembelian
+            // 
+            this.qtyBrgPembelian.Location = new System.Drawing.Point(126, 145);
+            this.qtyBrgPembelian.Name = "qtyBrgPembelian";
+            this.qtyBrgPembelian.Size = new System.Drawing.Size(100, 20);
+            this.qtyBrgPembelian.TabIndex = 3;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(47, 112);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(55, 13);
+            this.label32.TabIndex = 4;
+            this.label32.Text = "ID Barang";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(47, 148);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(23, 13);
+            this.label33.TabIndex = 5;
+            this.label33.Text = "Qty";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(47, 180);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(59, 13);
+            this.label34.TabIndex = 7;
+            this.label34.Text = "Supplier ID";
+            // 
+            // addListPembelian
+            // 
+            this.addListPembelian.Location = new System.Drawing.Point(127, 202);
+            this.addListPembelian.Name = "addListPembelian";
+            this.addListPembelian.Size = new System.Drawing.Size(122, 23);
+            this.addListPembelian.TabIndex = 8;
+            this.addListPembelian.Text = "Tbh ke Keranjang";
+            this.addListPembelian.UseVisualStyleBackColor = true;
+            this.addListPembelian.Click += new System.EventHandler(this.addListPembelian_Click);
+            // 
+            // checkoutPembelian
+            // 
+            this.checkoutPembelian.Location = new System.Drawing.Point(724, 223);
+            this.checkoutPembelian.Name = "checkoutPembelian";
+            this.checkoutPembelian.Size = new System.Drawing.Size(75, 23);
+            this.checkoutPembelian.TabIndex = 9;
+            this.checkoutPembelian.Text = "Selesai";
+            this.checkoutPembelian.UseVisualStyleBackColor = true;
+            this.checkoutPembelian.Click += new System.EventHandler(this.checkoutPembelian_Click);
+            // 
+            // pembelianToolStripMenuItem
+            // 
+            this.pembelianToolStripMenuItem.Name = "pembelianToolStripMenuItem";
+            this.pembelianToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.pembelianToolStripMenuItem.Text = "Pembelian";
+            this.pembelianToolStripMenuItem.Click += new System.EventHandler(this.pembelianToolStripMenuItem_Click);
+            // 
+            // krgBrgBeliBTN
+            // 
+            this.krgBrgBeliBTN.Location = new System.Drawing.Point(127, 222);
+            this.krgBrgBeliBTN.Name = "krgBrgBeliBTN";
+            this.krgBrgBeliBTN.Size = new System.Drawing.Size(121, 23);
+            this.krgBrgBeliBTN.TabIndex = 10;
+            this.krgBrgBeliBTN.Text = "Krg dr Keranjang";
+            this.krgBrgBeliBTN.UseVisualStyleBackColor = true;
+            this.krgBrgBeliBTN.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // HpsBrgBeliBTN
+            // 
+            this.HpsBrgBeliBTN.Location = new System.Drawing.Point(127, 246);
+            this.HpsBrgBeliBTN.Name = "HpsBrgBeliBTN";
+            this.HpsBrgBeliBTN.Size = new System.Drawing.Size(121, 23);
+            this.HpsBrgBeliBTN.TabIndex = 11;
+            this.HpsBrgBeliBTN.Text = "Hps dr Keranjang";
+            this.HpsBrgBeliBTN.UseVisualStyleBackColor = true;
+            this.HpsBrgBeliBTN.Click += new System.EventHandler(this.HpsBrgBeliBTN_Click);
+            // 
+            // suppIDBeliBrgTB
+            // 
+            this.suppIDBeliBrgTB.Location = new System.Drawing.Point(127, 177);
+            this.suppIDBeliBrgTB.Name = "suppIDBeliBrgTB";
+            this.suppIDBeliBrgTB.Size = new System.Drawing.Size(100, 20);
+            this.suppIDBeliBrgTB.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 523);
+            this.Controls.Add(this.pembelian_pnl);
             this.Controls.Add(this.editSupPanel);
             this.Controls.Add(this.lihatSupPanel);
             this.Controls.Add(this.regisSupPanel);
@@ -1291,6 +1441,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.lihatSupDGV)).EndInit();
             this.regisSupPanel.ResumeLayout(false);
             this.regisSupPanel.PerformLayout();
+            this.pembelian_pnl.ResumeLayout(false);
+            this.pembelian_pnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.keranjangBeli)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1414,6 +1567,20 @@
         private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem2;
+        private System.Windows.Forms.Panel pembelian_pnl;
+        private System.Windows.Forms.Button checkoutPembelian;
+        private System.Windows.Forms.Button addListPembelian;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox qtyBrgPembelian;
+        private System.Windows.Forms.TextBox idBrgPembelian;
+        private System.Windows.Forms.DataGridView keranjangBeli;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ToolStripMenuItem pembelianToolStripMenuItem;
+        private System.Windows.Forms.Button krgBrgBeliBTN;
+        private System.Windows.Forms.Button HpsBrgBeliBTN;
+        private System.Windows.Forms.TextBox suppIDBeliBrgTB;
     }
 }
 
