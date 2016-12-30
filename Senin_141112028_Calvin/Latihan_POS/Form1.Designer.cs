@@ -172,6 +172,19 @@
             this.JualCart = new System.Windows.Forms.DataGridView();
             this.label38 = new System.Windows.Forms.Label();
             this.penjualanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pembelianToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.penjualanToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyPembelianPanel = new System.Windows.Forms.Panel();
+            this.label43 = new System.Windows.Forms.Label();
+            this.historyPembelianDGV = new System.Windows.Forms.DataGridView();
+            this.historyPenjualanPanel = new System.Windows.Forms.Panel();
+            this.label44 = new System.Windows.Forms.Label();
+            this.historyPenjualanDGV = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.panel_register_barang.SuspendLayout();
             this.panel_lht_brg.SuspendLayout();
@@ -192,6 +205,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.keranjangBeli)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JualCart)).BeginInit();
+            this.historyPembelianPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.historyPembelianDGV)).BeginInit();
+            this.historyPenjualanPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.historyPenjualanDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -201,7 +218,8 @@
             this.lihatToolStripMenuItem,
             this.editToolStripMenuItem,
             this.pembelianToolStripMenuItem,
-            this.penjualanToolStripMenuItem});
+            this.penjualanToolStripMenuItem,
+            this.historyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(872, 24);
@@ -1282,6 +1300,8 @@
             // 
             // pembelian_pnl
             // 
+            this.pembelian_pnl.Controls.Add(this.label40);
+            this.pembelian_pnl.Controls.Add(this.label39);
             this.pembelian_pnl.Controls.Add(this.suppIDBeliBrgTB);
             this.pembelian_pnl.Controls.Add(this.HpsBrgBeliBTN);
             this.pembelian_pnl.Controls.Add(this.krgBrgBeliBTN);
@@ -1414,6 +1434,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label42);
+            this.panel1.Controls.Add(this.label41);
             this.panel1.Controls.Add(this.custIDJualTB);
             this.panel1.Controls.Add(this.delSell);
             this.panel1.Controls.Add(this.minSell);
@@ -1543,11 +1565,126 @@
             this.penjualanToolStripMenuItem.Text = "Penjualan";
             this.penjualanToolStripMenuItem.Click += new System.EventHandler(this.penjualanToolStripMenuItem_Click);
             // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(250, 180);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(141, 13);
+            this.label39.TabIndex = 13;
+            this.label39.Text = "ID yang input harus terdaftar";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(248, 109);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(141, 13);
+            this.label40.TabIndex = 13;
+            this.label40.Text = "ID yang input harus terdaftar";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(257, 201);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(141, 13);
+            this.label41.TabIndex = 25;
+            this.label41.Text = "ID yang input harus terdaftar";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(257, 129);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(141, 13);
+            this.label42.TabIndex = 25;
+            this.label42.Text = "ID yang input harus terdaftar";
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pembelianToolStripMenuItem1,
+            this.penjualanToolStripMenuItem1});
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.historyToolStripMenuItem.Text = "History";
+            // 
+            // pembelianToolStripMenuItem1
+            // 
+            this.pembelianToolStripMenuItem1.Name = "pembelianToolStripMenuItem1";
+            this.pembelianToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.pembelianToolStripMenuItem1.Text = "Pembelian";
+            this.pembelianToolStripMenuItem1.Click += new System.EventHandler(this.pembelianToolStripMenuItem1_Click);
+            // 
+            // penjualanToolStripMenuItem1
+            // 
+            this.penjualanToolStripMenuItem1.Name = "penjualanToolStripMenuItem1";
+            this.penjualanToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.penjualanToolStripMenuItem1.Text = "Penjualan";
+            this.penjualanToolStripMenuItem1.Click += new System.EventHandler(this.penjualanToolStripMenuItem1_Click);
+            // 
+            // historyPembelianPanel
+            // 
+            this.historyPembelianPanel.Controls.Add(this.historyPembelianDGV);
+            this.historyPembelianPanel.Controls.Add(this.label43);
+            this.historyPembelianPanel.Location = new System.Drawing.Point(30, 396);
+            this.historyPembelianPanel.Name = "historyPembelianPanel";
+            this.historyPembelianPanel.Size = new System.Drawing.Size(200, 100);
+            this.historyPembelianPanel.TabIndex = 26;
+            this.historyPembelianPanel.Visible = false;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(35, 28);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(91, 13);
+            this.label43.TabIndex = 0;
+            this.label43.Text = "History Pembelian";
+            // 
+            // historyPembelianDGV
+            // 
+            this.historyPembelianDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.historyPembelianDGV.Location = new System.Drawing.Point(30, 65);
+            this.historyPembelianDGV.Name = "historyPembelianDGV";
+            this.historyPembelianDGV.Size = new System.Drawing.Size(820, 391);
+            this.historyPembelianDGV.TabIndex = 1;
+            // 
+            // historyPenjualanPanel
+            // 
+            this.historyPenjualanPanel.Controls.Add(this.historyPenjualanDGV);
+            this.historyPenjualanPanel.Controls.Add(this.label44);
+            this.historyPenjualanPanel.Location = new System.Drawing.Point(300, 396);
+            this.historyPenjualanPanel.Name = "historyPenjualanPanel";
+            this.historyPenjualanPanel.Size = new System.Drawing.Size(200, 100);
+            this.historyPenjualanPanel.TabIndex = 27;
+            this.historyPenjualanPanel.Visible = false;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(35, 35);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(89, 13);
+            this.label44.TabIndex = 0;
+            this.label44.Text = "History Penjualan";
+            // 
+            // historyPenjualanDGV
+            // 
+            this.historyPenjualanDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.historyPenjualanDGV.Location = new System.Drawing.Point(30, 66);
+            this.historyPenjualanDGV.Name = "historyPenjualanDGV";
+            this.historyPenjualanDGV.Size = new System.Drawing.Size(820, 392);
+            this.historyPenjualanDGV.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 523);
+            this.Controls.Add(this.historyPenjualanPanel);
+            this.Controls.Add(this.historyPembelianPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pembelian_pnl);
             this.Controls.Add(this.editSupPanel);
@@ -1596,6 +1733,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JualCart)).EndInit();
+            this.historyPembelianPanel.ResumeLayout(false);
+            this.historyPembelianPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.historyPembelianDGV)).EndInit();
+            this.historyPenjualanPanel.ResumeLayout(false);
+            this.historyPenjualanPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.historyPenjualanDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1747,6 +1890,19 @@
         private System.Windows.Forms.DataGridView JualCart;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.ToolStripMenuItem penjualanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pembelianToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem penjualanToolStripMenuItem1;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Panel historyPembelianPanel;
+        private System.Windows.Forms.DataGridView historyPembelianDGV;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Panel historyPenjualanPanel;
+        private System.Windows.Forms.DataGridView historyPenjualanDGV;
+        private System.Windows.Forms.Label label44;
     }
 }
 

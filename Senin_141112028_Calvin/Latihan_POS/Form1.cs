@@ -656,5 +656,36 @@ namespace Latihan_POS
             panel1.Show();
             panel1.Dock = DockStyle.Fill;
         }
+
+        private void pembelianToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+
+            historyPembelianPanel.Show();
+            historyPembelianPanel.Dock = DockStyle.Fill;
+            DataSet ds = new DataSet();
+            ds = beli.lihat();
+            historyPembelianDGV.ReadOnly = true;
+            historyPembelianDGV.AllowUserToAddRows = false;
+            historyPembelianDGV.AllowUserToDeleteRows = false;
+            historyPembelianDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            historyPembelianDGV.DataSource = ds.Tables["historyPembelian"];
+        }
+
+        private void penjualanToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+            
+            historyPenjualanPanel.Show();
+            historyPenjualanPanel.Dock = DockStyle.Fill;
+            DataSet ds = new DataSet();
+            ds = beli.lihatJual();
+            historyPenjualanDGV.ReadOnly = true;
+            historyPenjualanDGV.AllowUserToAddRows = false;
+            historyPenjualanDGV.AllowUserToDeleteRows = false;
+            historyPenjualanDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            historyPenjualanDGV.DataSource = ds.Tables["historyPenjualan"];
+
+        }
     }
 }

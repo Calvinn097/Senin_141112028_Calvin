@@ -160,5 +160,35 @@ namespace Latihan_POS
             db.close_conn();
             return "success";
         }
+
+        public DataSet lihat()
+        {
+            Dbconn db = new Dbconn();
+            db.initialize_conn();
+            DataSet ds = new DataSet();
+            string where = "";
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            string sql = "select id_pembelian,tanggal,total_price,supplier.Nama as namaSupplier,supplier.Alamat,supplier.NoHP from buy inner join supplier on supplier.ID=buy.supplier_id";
+            da.SelectCommand = new MySqlCommand(sql, db.conn);
+            da.Fill(ds, "historyPembelian");
+            da.Dispose();
+            db.close_conn();
+            return ds;
+        }
+
+        public DataSet lihatJual()
+        {
+            Dbconn db = new Dbconn();
+            db.initialize_conn();
+            DataSet ds = new DataSet();
+            string where = "";
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            string sql = "select id_penjualan,tanggal,total_price,customer.Nama as namaCustomer,customer.Alamat,customer.NoHP from sell inner join customer on customer.ID=sell.customer_id";
+            da.SelectCommand = new MySqlCommand(sql, db.conn);
+            da.Fill(ds, "historyPenjualan");
+            da.Dispose();
+            db.close_conn();
+            return ds;
+        }
     }
 }
